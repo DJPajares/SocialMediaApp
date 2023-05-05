@@ -23,20 +23,12 @@ type Props = {
 };
 
 const HomeScreen = ({navigation}: Props) => {
-  const handleNavigateToNotifications = () => {
-    navigation.navigate('Notifications');
-  };
-
   return (
     <SafeAreaView style={styles.flex}>
       <Header />
 
       <View style={styles.container}>
         <Text style={styles.headerText}>Home screen</Text>
-
-        <TouchableOpacity onPress={handleNavigateToNotifications}>
-          <Text style={styles.bodyText}>Go to Notifications</Text>
-        </TouchableOpacity>
       </View>
     </SafeAreaView>
   );
