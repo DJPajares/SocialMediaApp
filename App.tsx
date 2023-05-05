@@ -4,7 +4,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import BottomTabs from './components/BottomTabs';
 import NotificationsScreen from './containers/NotificationsScreen';
 import TransactionScreen from './containers/TransactionScreen';
-import ScanScreen from './containers/ScanScreen';
+import ScanScreen from './containers/ReviewScreen';
 
 const Stack = createNativeStackNavigator();
 

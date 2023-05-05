@@ -1,8 +1,8 @@
 import React from 'react';
 import HomeScreen from '../containers/HomeScreen';
 import MarketplaceScreen from '../containers/MarketplaceScreen';
-import ScanScreen from '../containers/ScanScreen';
-import TransactionsScreen from '../containers/TransactionsScreen';
+import ReviewScreen from '../containers/ReviewScreen';
+import ExploreScreen from '../containers/ExploreScreen';
 import ProfileScreen from '../containers/ProfileScreen';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -47,25 +47,25 @@ const BottomTabs = () => {
         }}
       />
       <Tab.Screen
-        name="Transactions"
-        component={TransactionsScreen}
+        name="Explore"
+        component={ExploreScreen}
         options={{
           headerShown: false,
-          tabBarLabel: 'Transactions',
+          tabBarLabel: 'Explore',
           tabBarInactiveTintColor: 'black',
           tabBarIcon: ({color, size}) =>
-            TabBarIcon({name: 'credit-card', color, size}),
+            TabBarIcon({name: 'magnify', color, size}),
         }}
       />
       <Tab.Screen
-        name="Scan"
-        component={ScanScreen}
+        name="Review"
+        component={ReviewScreen}
         options={{
           headerShown: false,
           tabBarLabel: '',
           tabBarInactiveTintColor: 'black',
           tabBarIcon: ({size}) =>
-            TabBarMiddleIcon({name: 'line-scan', color: 'white', size}),
+            TabBarMiddleIcon({name: 'plus-thick', color: 'white', size}),
           tabBarButton: props => <TouchableOpacity {...props} />,
         }}
         listeners={({navigation}) => ({
