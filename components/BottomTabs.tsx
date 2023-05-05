@@ -1,6 +1,6 @@
 import React from 'react';
 import HomeScreen from '../containers/HomeScreen';
-import BuyScreen from '../containers/BuyScreen';
+import MarketplaceScreen from '../containers/MarketplaceScreen';
 import ScanScreen from '../containers/ScanScreen';
 import TransactionsScreen from '../containers/TransactionsScreen';
 import ProfileScreen from '../containers/ProfileScreen';
@@ -47,14 +47,14 @@ const BottomTabs = () => {
         }}
       />
       <Tab.Screen
-        name="Buy"
-        component={BuyScreen}
+        name="Transactions"
+        component={TransactionsScreen}
         options={{
           headerShown: false,
-          tabBarLabel: 'Buy',
+          tabBarLabel: 'Transactions',
           tabBarInactiveTintColor: 'black',
           tabBarIcon: ({color, size}) =>
-            TabBarIcon({name: 'storefront', color, size}),
+            TabBarIcon({name: 'credit-card', color, size}),
         }}
       />
       <Tab.Screen
@@ -76,14 +76,14 @@ const BottomTabs = () => {
         })}
       />
       <Tab.Screen
-        name="Transactions"
-        component={TransactionsScreen}
+        name="Marketplace"
+        component={MarketplaceScreen}
         options={{
           headerShown: false,
-          tabBarLabel: 'Transactions',
+          tabBarLabel: 'Marketplace',
           tabBarInactiveTintColor: 'black',
           tabBarIcon: ({color, size}) =>
-            TabBarIcon({name: 'credit-card', color, size}),
+            TabBarIcon({name: 'storefront', color, size}),
         }}
       />
       <Tab.Screen

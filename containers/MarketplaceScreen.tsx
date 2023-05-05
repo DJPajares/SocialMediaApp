@@ -5,7 +5,6 @@ import {
   View,
   TextInput,
   TouchableOpacity,
-  ScrollView,
   FlatList,
 } from 'react-native';
 import Header from '../components/Header';
@@ -19,7 +18,6 @@ const BuyScreen = () => {
     <SafeAreaView style={styles.flex}>
       <Header />
 
-      {/* <View style={styles.container}> */}
       <FlatList
         data={items}
         keyExtractor={item => item.id.toString()}
@@ -41,21 +39,6 @@ const BuyScreen = () => {
         showsHorizontalScrollIndicator={false}
         contentContainerStyle={styles.container}
       />
-
-      {/* <ScrollView showsHorizontalScrollIndicator={false}>
-          <View style={styles.searchBarContainer}>
-            <TextInput style={styles.searchBar} placeholder="Search..." />
-          </View>
-
-          <View style={styles.cardsContainer}>
-            {items.map(item => (
-              <TouchableOpacity key={item.id}>
-                <Cards image={item.image} name={item.name} price={item.price} />
-              </TouchableOpacity>
-            ))}
-          </View>
-        </ScrollView> */}
-      {/* </View> */}
     </SafeAreaView>
   );
 };
