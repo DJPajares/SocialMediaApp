@@ -3,13 +3,9 @@ import {Text, SafeAreaView, StyleSheet, View} from 'react-native';
 import ModalHeader from '../components/ModalHeader';
 
 const ReviewScreen = ({navigation}) => {
-  const handleBack = () => {
-    navigation.goBack();
-  };
-
   return (
     <SafeAreaView style={styles.flex}>
-      <ModalHeader title="Review" handleBack={handleBack} />
+      <ModalHeader title="Review" />
 
       <View style={styles.container}>
         <Text style={styles.headerText}>Review</Text>

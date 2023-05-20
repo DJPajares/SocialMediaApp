@@ -1,12 +1,18 @@
+import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 
 type ModalHeaderProps = {
   title: string;
-  handleBack: () => void;
 };
 
-const ModalHeader = ({title, handleBack}: ModalHeaderProps) => {
+const ModalHeader = ({title}: ModalHeaderProps) => {
+  const navigation = useNavigation();
+
+  const handleBack = () => {
+    navigation.goBack();
+  };
+
   return (
     <View style={styles.container}>
       {/* <Text numberOfLines={1} ellipsizeMode="tail" style={styles.headerText}>
@@ -28,6 +34,7 @@ const styles = StyleSheet.create({
     padding: 16,
     flexDirection: 'row',
     justifyContent: 'space-between',
+    alignItems: 'center',
     borderBottomColor: '#ebe8e8',
     borderBottomWidth: 1,
   },
