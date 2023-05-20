@@ -1,23 +1,27 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import {formatCurrency} from '../utils/formatUtils';
+import {useNavigation} from '@react-navigation/native';
 
 type CardDetailsProps = {
-  name: string;
-  price: number;
-  currency: string;
-  category: string;
-  likeCount: number;
+  // navigation: any;
+  item: any;
+  // id: number;
+  // name: string;
+  // price: number;
+  // currency: string;
+  // category: string;
+  // likeCount: number;
 };
 
-const CardDetails = ({
-  name,
-  price,
-  currency,
-  category,
-  likeCount,
-}: CardDetailsProps) => {
+const CardDetails = ({item}: CardDetailsProps) => {
+  const navigation = useNavigation();
+
+  const handleOpenItem = () => {
+    navigation.navigate('MarketPlaceItem', {item});
+  };
+
   return (
     <View>
       <View style={styles.boxContainer}>
@@ -27,18 +31,20 @@ const CardDetails = ({
             color="black"
             size={20}
           />
-          <Text style={styles.likeText}>{likeCount}</Text>
+          <Text style={styles.likeText}>{item.likeCount}</Text>
         </View>
 
         <Text style={styles.priceText}>
-          {formatCurrency({value: price, currency})}
+          {formatCurrency({value: item.price, currency: item.currency})}
         </Text>
       </View>
 
       <View style={styles.boxContainer}>
-        <Text numberOfLines={1} ellipsizeMode="tail" style={styles.nameText}>
-          {name}
-        </Text>
+        <TouchableOpacity onPress={() => handleOpenItem()}>
+          <Text numberOfLines={1} ellipsizeMode="tail" style={styles.nameText}>
+            {item.name}
+          </Text>
+        </TouchableOpacity>
       </View>
 
       <View style={styles.boxContainer}>
@@ -46,7 +52,7 @@ const CardDetails = ({
           numberOfLines={1}
           ellipsizeMode="tail"
           style={styles.categoryText}>
-          {category}
+          {item.category}
         </Text>
       </View>
     </View>

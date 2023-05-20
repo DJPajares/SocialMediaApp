@@ -1,31 +1,49 @@
+import {useNavigation} from '@react-navigation/native';
 import React from 'react';
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
 type CardProps = {
-  image: string;
-  username: string;
-  userImage: string;
+  item: any;
+  // image: string;
+  // username: string;
+  // userImage: string;
 };
 
-const Card = ({image, username, userImage}: CardProps) => {
+const Card = ({item}: CardProps) => {
+  const navigation = useNavigation();
+
+  const handleOpenItem = () => {
+    navigation.navigate('MarketPlaceItem', {item});
+  };
+
+  const handleNavigateToProfile = () => {
+    navigation.navigate('UserProfile');
+  };
+
   return (
     <View>
-      <Image style={styles.image} source={{uri: image}} />
+      <TouchableOpacity onPress={() => handleOpenItem()}>
+        <Image style={styles.image} source={{uri: item.image}} />
+      </TouchableOpacity>
 
       <LinearGradient
         colors={['transparent', 'rgba(0,0,0,0.7)']}
         style={styles.overlay}>
         <View style={styles.userContainer}>
-          <Image style={styles.userImage} source={{uri: userImage}} />
+          <TouchableOpacity onPress={() => handleNavigateToProfile()}>
+            <Image style={styles.userImage} source={{uri: item.userImage}} />
+          </TouchableOpacity>
 
           <View style={styles.usernameContainer}>
-            <Text
-              numberOfLines={1}
-              ellipsizeMode="tail"
-              style={styles.username}>
-              {username}
-            </Text>
+            <TouchableOpacity onPress={() => handleNavigateToProfile()}>
+              <Text
+                numberOfLines={1}
+                ellipsizeMode="tail"
+                style={styles.username}>
+                {item.username}
+              </Text>
+            </TouchableOpacity>
           </View>
         </View>
       </LinearGradient>
