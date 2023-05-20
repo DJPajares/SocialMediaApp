@@ -11,7 +11,10 @@
       "price": 12.50,
       "currency": "SGD",
       "description": "Used only a few times. Still in good condition. Will be buying a Spalding instead.",
-      "image": "https://media.newitts.com/cdn/images/products/new-design/800x800/it013766d.jpg"
+      "image": "https://media.newitts.com/cdn/images/products/new-design/800x800/it013766d.jpg",
+      "username": "John Doe",
+      "userImage": "https://images.pexels.com/photos/1933873/pexels-photo-1933873.jpeg",
+      "likeCount": 10,
     },
     {
       "id": 2,
@@ -19,7 +22,10 @@
       "price": 27,
       "currency": "SGD",
       "description": "Bought during his concert in Singapore. Worn only once.",
-      "image": "https://cdn.shopify.com/s/files/1/0497/6128/8349/files/20230509_182344220_iOS_2000x.heic"
+      "image": "https://cdn.shopify.com/s/files/1/0497/6128/8349/files/20230509_182344220_iOS_2000x.heic",
+      "username": "Jane Smith",
+      "userImage": "https://images.pexels.com/photos/6608313/pexels-photo-6608313.jpeg",
+      "likeCount": 5,
     },
     {
       "id": 3,
@@ -27,7 +33,10 @@
       "price": 9.99,
       "currency": "SGD",
       "description": "Used Fantastic Four comics. Still in good condition. Willing to trade with other Marvel comics.",
-      "image": "https://images.radio.com/aiu-media/Marvel-0c4666a8-4486-4aca-9daa-a8a78cee911d.jpg"
+      "image": "https://images.radio.com/aiu-media/Marvel-0c4666a8-4486-4aca-9daa-a8a78cee911d.jpg",
+      "username": "David Lee",
+      "userImage": "https://images.pexels.com/photos/4412516/pexels-photo-4412516.jpeg",
+      "likeCount": 2,
     },
     {
       "id": 4,
@@ -35,7 +44,10 @@
       "price": 688,
       "currency": "SGD",
       "description": "Brand new Steam Deck. 64GB. Willing to trade with PS5.",
-      "image": "https://i.pcmag.com/imagery/reviews/02en94vZRDlIFeB9IKuQAlI-20.fit_scale.size_760x427.v1646419997.jpg"
+      "image": "https://i.pcmag.com/imagery/reviews/02en94vZRDlIFeB9IKuQAlI-20.fit_scale.size_760x427.v1646419997.jpg",
+      "username": "Emily Swan",
+      "userImage": "https://images.pexels.com/photos/5119214/pexels-photo-5119214.jpeg",
+      "likeCount": 35,
     },
     {
       "id": 5,
@@ -43,7 +55,10 @@
       "price": 90000,
       "currency": "SGD",
       "description": "Beyond rare, this is the only known surviving Macintosh prototype with a Twiggy disk drive.",
-      "image": "https://i.dailymail.co.uk/i/pix/2012/04/13/article-2129162-1293AA59000005DC-331_634x509.jpg"
+      "image": "https://i.dailymail.co.uk/i/pix/2012/04/13/article-2129162-1293AA59000005DC-331_634x509.jpg",
+      "username": "Michael Kim",
+      "userImage": "https://images.pexels.com/photos/8114406/pexels-photo-8114406.jpeg",
+      "likeCount": 368,
     },
     {
       "id": 6,
@@ -51,7 +66,10 @@
       "price": 5,
       "currency": "SGD",
       "description": "2 pots of terrarium plants. Took me 2 years to grow them. Need a new home.",
-      "image": "https://epicworkshops.b-cdn.net/wp-content/uploads/2021/03/IMG_2713-570x667-1.jpg"
+      "image": "https://epicworkshops.b-cdn.net/wp-content/uploads/2021/03/IMG_2713-570x667-1.jpg",
+      "username": "Sarah Tan",
+      "userImage": "https://images.pexels.com/photos/8114406/pexels-photo-8114406.jpeg",
+      "likeCount": 88,
     },
     {
       "id": 7,
@@ -59,7 +77,10 @@
       "price": 3500,
       "currency": "SGD",
       "description": "2 VIP tickets to the Beyonce and Jay-Z concert. Selling at a loss.",
-      "image": "https://soundigest.com/wp-content/uploads/2016/08/10313172_10152524777209002_6783548136581784305_n.jpg"
+      "image": "https://soundigest.com/wp-content/uploads/2016/08/10313172_10152524777209002_6783548136581784305_n.jpg",
+      "username": "Megan Wolf",
+      "userImage": "https://images.pexels.com/photos/8114406/pexels-photo-8114406.jpeg",
+      "likeCount": 12,
     },
     {
       "id": 8,
@@ -67,7 +88,10 @@
       "price": 8.25,
       "currency": "SGD",
       "description": "A child mouth guard. Used only once.",
-      "image": "https://www.dentallaboratorio.com/wp-content/uploads/2021/06/child-mouth-guard-for-sale.jpg"
+      "image": "https://www.dentallaboratorio.com/wp-content/uploads/2021/06/child-mouth-guard-for-sale.jpg",
+      "username": "Alice N. Blunderland",
+      "userImage": "https://images.pexels.com/photos/8114406/pexels-photo-8114406.jpeg",
+      "likeCount": 0,
     },
     {
       "id": 9,
@@ -75,7 +99,10 @@
       "price": 90,
       "currency": "SGD",
       "description": "Brand new Apple HomePod Mini. Selling because I already have one.",
-      "image": "https://i.rtings.com/assets/products/Raq5Ijzg/apple-homepod-mini/design-medium.jpg"
+      "image": "https://i.rtings.com/assets/products/Raq5Ijzg/apple-homepod-mini/design-medium.jpg",
+      "username": "Peter Barker",
+      "userImage": "https://images.pexels.com/photos/8114406/pexels-photo-8114406.jpeg",
+      "likeCount": 1,
     }
   ]
 }
