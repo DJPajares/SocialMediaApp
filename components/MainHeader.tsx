@@ -3,7 +3,7 @@ import React from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-const Header = () => {
+const MainHeader = () => {
   const navigation = useNavigation();
 
   const handleNotifications = () => {
@@ -12,7 +12,7 @@ const Header = () => {
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+      <TouchableOpacity onPress={() => navigation.navigate('HomeStack')}>
         <Text style={styles.appNameText}>atrillion</Text>
       </TouchableOpacity>
 
@@ -30,7 +30,7 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default MainHeader;
 
 const styles = StyleSheet.create({
   container: {

@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
   FlatList,
 } from 'react-native';
-import Header from '../components/Header';
+import MainHeader from '../components/MainHeader';
 import mockData from '../mockData/mockData.json';
 import Card from '../components/Card';
 import CardDetails from '../components/CardDetails';
@@ -21,7 +21,7 @@ const MarketplaceScreen = ({navigation}) => {
 
   return (
     <SafeAreaView style={styles.flex}>
-      <Header />
+      <MainHeader />
 
       <FlatList
         data={items}
@@ -31,19 +31,22 @@ const MarketplaceScreen = ({navigation}) => {
             <TouchableOpacity
               key={item.id}
               onPress={() => handleOpenItem({item})}>
-              <Card
+              <Card item={item} />
+              {/* <Card
                 image={item.image}
                 username={item.username}
                 userImage={item.userImage}
-              />
+              /> */}
             </TouchableOpacity>
 
             <CardDetails
-              name={item.name}
-              price={item.price}
-              currency={item.currency}
-              category={item.category}
-              likeCount={item.likeCount}
+              item={item}
+              // id={item.id}
+              // name={item.name}
+              // price={item.price}
+              // currency={item.currency}
+              // category={item.category}
+              // likeCount={item.likeCount}
             />
           </View>
         )}

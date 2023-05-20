@@ -8,7 +8,7 @@ import {
   View,
 } from 'react-native';
 import mockData from '../mockData/mockData.json';
-import Header from '../components/Header';
+import MainHeader from '../components/MainHeader';
 
 type RootStackParamList = {
   Transaction: {id: string};
@@ -32,7 +32,7 @@ const TransactionsScreen = ({navigation}: Props) => {
 
   return (
     <SafeAreaView style={styles.flex}>
-      <Header />
+      <MainHeader />
 
       <View style={styles.container}>
         <Text style={styles.headerText}>Transactions screen</Text>

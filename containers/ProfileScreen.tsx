@@ -1,13 +1,7 @@
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import React from 'react';
-import {
-  Text,
-  SafeAreaView,
-  StyleSheet,
-  TouchableOpacity,
-  View,
-} from 'react-native';
-import Header from '../components/Header';
+import {Text, SafeAreaView, StyleSheet, View} from 'react-native';
+import MainHeader from '../components/MainHeader';
 
 type RootStackParamList = {
   Notifications: undefined;
@@ -25,7 +19,7 @@ type Props = {
 const ProfileScreen = ({navigation}: Props) => {
   return (
     <SafeAreaView style={styles.flex}>
-      <Header />
+      <MainHeader />
 
       <View style={styles.container}>
         <Text style={styles.headerText}>Profile screen</Text>
