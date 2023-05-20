@@ -1,5 +1,5 @@
 import React from 'react';
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Image, ScrollView, StyleSheet, Text, View} from 'react-native';
 import ModalHeader from '../components/ModalHeader';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import {formatCurrency} from '../utils/formatUtils';
@@ -26,49 +26,54 @@ const MarketPlaceItem = ({navigation, route}) => {
     <View style={styles.flex}>
       <ModalHeader title={name} handleBack={handleBack} />
 
-      <Image style={styles.image} source={{uri: image}} />
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <Image style={styles.image} source={{uri: image}} />
 
-      <View style={styles.container}>
-        <View style={styles.headerContainer}>
-          <View style={styles.likeContainer}>
-            <MaterialCommunityIcons
-              name="heart-outline"
-              color="black"
-              size={25}
-            />
-            <Text style={styles.likeText}>{likeCount}</Text>
-          </View>
+        <View style={styles.container}>
+          <View style={styles.headerContainer}>
+            <View style={styles.likeContainer}>
+              <MaterialCommunityIcons
+                name="heart-outline"
+                color="black"
+                size={25}
+              />
+              <Text style={styles.likeText}>{likeCount}</Text>
+            </View>
 
-          <Text style={styles.priceText}>
-            {formatCurrency({value: price, currency})}
-          </Text>
-        </View>
-
-        <View style={styles.titleContainer}>
-          <Text numberOfLines={1} ellipsizeMode="tail" style={styles.nameText}>
-            {name}
-          </Text>
-          <Text style={styles.categoryText}>{category}</Text>
-        </View>
-
-        <View style={styles.descriptionContainer}>
-          <View style={styles.userContainer}>
-            <Image style={styles.userImage} source={{uri: userImage}} />
-
-            <Text
-              numberOfLines={1}
-              ellipsizeMode="tail"
-              style={styles.usernameText}>
-              {username}
+            <Text style={styles.priceText}>
+              {formatCurrency({value: price, currency})}
             </Text>
           </View>
 
-          <Text style={styles.countryText}>{country}</Text>
+          <View style={styles.titleContainer}>
+            <Text
+              numberOfLines={1}
+              ellipsizeMode="tail"
+              style={styles.nameText}>
+              {name}
+            </Text>
+            <Text style={styles.categoryText}>{category}</Text>
+          </View>
 
-          <View style={styles.divider} />
-          <Text style={styles.descriptionText}>{description}</Text>
+          <View style={styles.descriptionContainer}>
+            <View style={styles.userContainer}>
+              <Image style={styles.userImage} source={{uri: userImage}} />
+
+              <Text
+                numberOfLines={1}
+                ellipsizeMode="tail"
+                style={styles.usernameText}>
+                {username}
+              </Text>
+            </View>
+
+            <Text style={styles.countryText}>{country}</Text>
+
+            <View style={styles.divider} />
+            <Text style={styles.descriptionText}>{description}</Text>
+          </View>
         </View>
-      </View>
+      </ScrollView>
     </View>
   );
 };

@@ -1,12 +1,6 @@
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import React from 'react';
-import {
-  Text,
-  SafeAreaView,
-  StyleSheet,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import {Text, SafeAreaView, StyleSheet, View} from 'react-native';
 import Header from '../components/Header';
 
 type RootStackParamList = {
