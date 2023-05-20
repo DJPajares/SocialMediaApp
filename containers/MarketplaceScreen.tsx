@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   cardsContainer: {
-    flex: 1,
+    flex: 0.5, // prevent last column from stretching
     aspectRatio: 1,
     marginVertical: 24,
     marginHorizontal: 8,
