@@ -9,10 +9,14 @@ type ModalHeaderProps = {
 const ModalHeader = ({title, handleBack}: ModalHeaderProps) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.headerText}>{title}</Text>
-      <TouchableOpacity onPress={handleBack}>
-        <Text>Cancel</Text>
-      </TouchableOpacity>
+      {/* <Text numberOfLines={1} ellipsizeMode="tail" style={styles.headerText}>
+        {title}
+      </Text> */}
+      <View style={styles.headerContainer}>
+        <TouchableOpacity onPress={handleBack}>
+          <Text>Cancel</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
@@ -27,8 +31,14 @@ const styles = StyleSheet.create({
     borderBottomColor: '#ebe8e8',
     borderBottomWidth: 1,
   },
+  headerContainer: {
+    flexDirection: 'row',
+    flexGrow: 1,
+    justifyContent: 'flex-end',
+  },
   headerText: {
     fontWeight: 'bold',
     textTransform: 'uppercase',
+    width: '75%',
   },
 });
