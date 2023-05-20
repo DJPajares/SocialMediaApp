@@ -4,10 +4,10 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import {StyleSheet, TouchableOpacity, View} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import ReviewScreen from '../containers/ReviewScreen';
-import ExploreScreen from '../containers/ExploreScreen';
-import ProfileScreen from '../containers/ProfileScreen';
 import HomeStack from '../stacks/HomeStack';
 import MarketplaceStack from '../stacks/MarketplaceStack';
+import ProfileStack from '../stacks/ProfileStack';
+import ExploreStack from '../stacks/ExploreStack';
 
 const Tab = createBottomTabNavigator();
 
@@ -57,8 +57,8 @@ const BottomTabs = () => {
         }}
       />
       <Tab.Screen
-        name="Explore"
-        component={ExploreScreen}
+        name="ExploreStack"
+        component={ExploreStack}
         options={{
           headerShown: false,
           tabBarLabel: 'Explore',
@@ -97,8 +97,8 @@ const BottomTabs = () => {
         }}
       />
       <Tab.Screen
-        name="Profile"
-        component={ProfileScreen}
+        name="ProfileStack"
+        component={ProfileStack}
         options={{
           headerShown: false,
           tabBarLabel: 'Profile',
