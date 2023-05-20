@@ -6,6 +6,7 @@ import {
   TextInput,
   TouchableOpacity,
   FlatList,
+  Text,
 } from 'react-native';
 import Header from '../components/Header';
 import mockData from '../mockData/mockData.json';
@@ -31,7 +32,11 @@ const MarketplaceScreen = ({navigation}) => {
             <TouchableOpacity
               key={item.id}
               onPress={() => handleOpenItem({item})}>
-              <Card image={item.image} />
+              <Card
+                image={item.image}
+                username={item.username}
+                userImage={item.userImage}
+              />
             </TouchableOpacity>
 
             <CardDetails
@@ -76,14 +81,13 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     padding: 16,
     fontSize: 16,
+    marginBottom: 16,
   },
   cardsContainer: {
     flex: 0.5, // prevent last column from stretching
     aspectRatio: 1,
-    marginVertical: 32,
+    marginBottom: 80, // add space between cards vertically
     marginHorizontal: 8,
-    borderRadius: 8,
-    backgroundColor: '#fff',
     shadowColor: '#000',
     shadowOpacity: 0.2,
     shadowRadius: 8,
