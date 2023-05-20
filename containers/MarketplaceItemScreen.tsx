@@ -1,10 +1,18 @@
 import React from 'react';
-import {Image, ScrollView, StyleSheet, Text, View} from 'react-native';
+import {
+  Image,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import ModalHeader from '../components/ModalHeader';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import {formatCurrency} from '../utils/formatUtils';
+import {SafeAreaView} from 'react-native';
 
-const MarketPlaceItem = ({navigation, route}) => {
+const MarketplaceItemScreen = ({navigation, route}) => {
   const {
     image,
     name,
@@ -22,8 +30,12 @@ const MarketPlaceItem = ({navigation, route}) => {
     navigation.goBack();
   };
 
+  const handleNavigateToProfile = () => {
+    navigation.navigate('UserProfile');
+  };
+
   return (
-    <View style={styles.flex}>
+    <SafeAreaView style={styles.flex}>
       <ModalHeader title={name} handleBack={handleBack} />
 
       <ScrollView showsVerticalScrollIndicator={false}>
@@ -56,16 +68,18 @@ const MarketPlaceItem = ({navigation, route}) => {
           </View>
 
           <View style={styles.descriptionContainer}>
-            <View style={styles.userContainer}>
-              <Image style={styles.userImage} source={{uri: userImage}} />
+            <TouchableOpacity onPress={() => handleNavigateToProfile()}>
+              <View style={styles.userContainer}>
+                <Image style={styles.userImage} source={{uri: userImage}} />
 
-              <Text
-                numberOfLines={1}
-                ellipsizeMode="tail"
-                style={styles.usernameText}>
-                {username}
-              </Text>
-            </View>
+                <Text
+                  numberOfLines={1}
+                  ellipsizeMode="tail"
+                  style={styles.usernameText}>
+                  {username}
+                </Text>
+              </View>
+            </TouchableOpacity>
 
             <Text style={styles.countryText}>{country}</Text>
 
@@ -74,11 +88,11 @@ const MarketPlaceItem = ({navigation, route}) => {
           </View>
         </View>
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 };
 
-export default MarketPlaceItem;
+export default MarketplaceItemScreen;
 
 const styles = StyleSheet.create({
   flex: {
@@ -139,13 +153,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   userImage: {
-    width: 25,
-    height: 25,
-    borderRadius: 12.5,
+    width: 30,
+    height: 30,
+    borderRadius: 15,
     marginRight: 8,
   },
   usernameText: {
-    fontSize: 14,
+    fontSize: 15,
+    fontWeight: 'bold',
   },
   countryText: {
     fontSize: 12,
