@@ -13,7 +13,9 @@ const Cards = ({image, name, price}: CardsProps) => {
       <Image style={styles.image} source={{uri: image}} />
 
       <View style={styles.textContainer}>
-        <Text style={styles.nameText}>{name}</Text>
+        <Text numberOfLines={1} ellipsizeMode="tail" style={styles.nameText}>
+          {name}
+        </Text>
         <Text style={styles.priceText}>{`$${price}`}</Text>
       </View>
     </View>
@@ -28,7 +30,7 @@ const styles = StyleSheet.create({
   },
   image: {
     aspectRatio: 1,
-    // resizeMode: 'cover',
+    // resizeMode: 'contain',
     borderRadius: 8,
     borderWidth: 0.3,
     borderColor: '#ccc',
@@ -41,6 +43,7 @@ const styles = StyleSheet.create({
   },
   nameText: {
     fontSize: 14,
+    width: '60%',
   },
   priceText: {
     fontSize: 16,
