@@ -15,18 +15,20 @@ const Card = ({image, username, userImage}: CardProps) => {
 
       <LinearGradient
         colors={['transparent', 'rgba(0,0,0,0.7)']}
-        style={styles.overlay}
-      />
+        style={styles.overlay}>
+        <View style={styles.userContainer}>
+          <Image style={styles.userImage} source={{uri: userImage}} />
 
-      <View style={styles.userContainer}>
-        <Image style={styles.userImage} source={{uri: userImage}} />
-
-        <View style={styles.usernameContainer}>
-          <Text numberOfLines={1} ellipsizeMode="tail" style={styles.username}>
-            {username}
-          </Text>
+          <View style={styles.usernameContainer}>
+            <Text
+              numberOfLines={1}
+              ellipsizeMode="tail"
+              style={styles.username}>
+              {username}
+            </Text>
+          </View>
         </View>
-      </View>
+      </LinearGradient>
     </View>
   );
 };
