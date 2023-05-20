@@ -9,7 +9,8 @@ import {
 } from 'react-native';
 import Header from '../components/Header';
 import mockData from '../mockData/mockData.json';
-import Cards from '../components/Cards';
+import Card from '../components/Card';
+import CardDetails from '../components/CardDetails';
 
 const MarketplaceScreen = ({navigation}) => {
   const {items} = mockData;
@@ -30,8 +31,14 @@ const MarketplaceScreen = ({navigation}) => {
             <TouchableOpacity
               key={item.id}
               onPress={() => handleOpenItem({item})}>
-              <Cards image={item.image} name={item.name} price={item.price} />
+              <Card image={item.image} />
             </TouchableOpacity>
+
+            <CardDetails
+              name={item.name}
+              price={item.price}
+              likeCount={item.likeCount}
+            />
           </View>
         )}
         ListHeaderComponent={
@@ -73,7 +80,7 @@ const styles = StyleSheet.create({
   cardsContainer: {
     flex: 0.5, // prevent last column from stretching
     aspectRatio: 1,
-    marginVertical: 24,
+    marginVertical: 32,
     marginHorizontal: 8,
     borderRadius: 8,
     backgroundColor: '#fff',
