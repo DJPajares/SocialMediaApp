@@ -24,9 +24,6 @@ export default Cards;
 
 const styles = StyleSheet.create({
   container: {
-    // marginTop: 16,
-    // width: '50%',
-    // width: 150,
     // flex: 1,
   },
   image: {

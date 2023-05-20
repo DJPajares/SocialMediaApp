@@ -5,6 +5,7 @@ import BottomTabs from './components/BottomTabs';
 import NotificationsScreen from './containers/NotificationsScreen';
 import TransactionScreen from './containers/TransactionScreen';
 import ScanScreen from './containers/ReviewScreen';
+import MarketPlaceItem from './containers/MarketPlaceItem';
 
 const Stack = createNativeStackNavigator();
 
@@ -19,6 +20,7 @@ const App = () => {
         </Stack.Group>
         <Stack.Group screenOptions={{presentation: 'modal'}}>
           <Stack.Screen name="CreateNew" component={ScanScreen} />
+          <Stack.Screen name="MarketPlaceItem" component={MarketPlaceItem} />
         </Stack.Group>
       </Stack.Navigator>
     </NavigationContainer>
