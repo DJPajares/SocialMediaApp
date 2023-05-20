@@ -14,6 +14,8 @@ const HomeStack = () => {
           animation: 'fade_from_bottom',
         }}>
         <Stack.Screen name="Home" component={HomeScreen} />
+      </Stack.Group>
+      <Stack.Group>
         <Stack.Screen name="Notifications" component={NotificationsScreen} />
         <Stack.Screen name="Transaction" component={TransactionScreen} />
       </Stack.Group>

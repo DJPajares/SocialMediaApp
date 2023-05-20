@@ -21,6 +21,10 @@ const MarketplaceStack = () => {
           component={MarketplaceItemScreen}
         />
         <Stack.Screen name="UserProfile" component={UserProfileScreen} />
+        {/* <Stack.Screen name="Notifications" component={NotificationsScreen} />
+        <Stack.Screen name="Transaction" component={TransactionScreen} /> */}
+      </Stack.Group>
+      <Stack.Group>
         <Stack.Screen name="Notifications" component={NotificationsScreen} />
         <Stack.Screen name="Transaction" component={TransactionScreen} />
       </Stack.Group>
