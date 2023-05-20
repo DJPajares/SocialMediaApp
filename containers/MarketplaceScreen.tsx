@@ -11,8 +11,12 @@ import Header from '../components/Header';
 import mockData from '../mockData/mockData.json';
 import Cards from '../components/Cards';
 
-const BuyScreen = () => {
+const MarketplaceScreen = ({navigation}) => {
   const {items} = mockData;
+
+  const handleOpenItem = ({item}) => {
+    navigation.navigate('MarketPlaceItem', {item});
+  };
 
   return (
     <SafeAreaView style={styles.flex}>
@@ -23,7 +27,9 @@ const BuyScreen = () => {
         keyExtractor={item => item.id.toString()}
         renderItem={({item}) => (
           <View style={styles.cardsContainer}>
-            <TouchableOpacity key={item.id}>
+            <TouchableOpacity
+              key={item.id}
+              onPress={() => handleOpenItem({item})}>
               <Cards image={item.image} name={item.name} price={item.price} />
             </TouchableOpacity>
           </View>
@@ -43,7 +49,7 @@ const BuyScreen = () => {
   );
 };
 
-export default BuyScreen;
+export default MarketplaceScreen;
 
 const styles = StyleSheet.create({
   flex: {
@@ -52,11 +58,6 @@ const styles = StyleSheet.create({
   container: {
     padding: 16,
   },
-  // listContainer: {
-  //   // justifyContent: 'center',
-  //   // width: '100%',
-  //   // alignItems: 'center',
-  // },
   searchBarContainer: {
     // width: '100%',
     // marginVertical: 16,
