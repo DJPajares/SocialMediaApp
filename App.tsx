@@ -2,10 +2,7 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import BottomTabs from './components/BottomTabs';
-import NotificationsScreen from './containers/NotificationsScreen';
-import TransactionScreen from './containers/TransactionScreen';
-import ScanScreen from './containers/ReviewScreen';
-import MarketPlaceItem from './containers/MarketPlaceItem';
+import ReviewScreen from './containers/ReviewScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -15,12 +12,12 @@ const App = () => {
       <Stack.Navigator screenOptions={{headerShown: false}}>
         <Stack.Group>
           <Stack.Screen name="BottomTabs" component={BottomTabs} />
-          <Stack.Screen name="Notifications" component={NotificationsScreen} />
-          <Stack.Screen name="Transaction" component={TransactionScreen} />
         </Stack.Group>
-        <Stack.Group screenOptions={{presentation: 'modal'}}>
-          <Stack.Screen name="CreateNew" component={ScanScreen} />
-          <Stack.Screen name="MarketPlaceItem" component={MarketPlaceItem} />
+        <Stack.Group
+          screenOptions={{
+            presentation: 'modal',
+          }}>
+          <Stack.Screen name="Review" component={ReviewScreen} />
         </Stack.Group>
       </Stack.Navigator>
     </NavigationContainer>

@@ -1,12 +1,13 @@
 import React from 'react';
-import HomeScreen from '../containers/HomeScreen';
-import MarketplaceScreen from '../containers/MarketplaceScreen';
-import ReviewScreen from '../containers/ReviewScreen';
-import ExploreScreen from '../containers/ExploreScreen';
-import ProfileScreen from '../containers/ProfileScreen';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import {StyleSheet, TouchableOpacity, View} from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
+import ReviewScreen from '../containers/ReviewScreen';
+import ExploreScreen from '../containers/ExploreScreen';
+import ProfileScreen from '../containers/ProfileScreen';
+import HomeStack from '../stacks/HomeStack';
+import MarketplaceStack from '../stacks/MarketplaceStack';
 
 const Tab = createBottomTabNavigator();
 
@@ -25,6 +26,15 @@ const TabBarMiddleIcon = ({name, color, size}: TabBarIconProps) => {
     <View style={styles.middleButton}>
       <MaterialCommunityIcons name={name} color={color} size={size} />
     </View>
+
+    // <LinearGradient
+    //   colors={['#74c0f4', '#1a6cb1']}
+    //   start={{x: 0, y: 0}}
+    //   end={{x: 1, y: 1}}
+    //   style={styles.middleButton}>
+    //   {/* Render your button content */}
+    //   <MaterialCommunityIcons name={name} color={color} size={size} />
+    // </LinearGradient>
   );
 };
 
@@ -36,8 +46,8 @@ const BottomTabs = () => {
         tabBarStyle: styles.tabBar,
       })}>
       <Tab.Screen
-        name="Home"
-        component={HomeScreen}
+        name="HomeStack"
+        component={HomeStack}
         options={{
           headerShown: false,
           tabBarLabel: 'Home',
@@ -58,7 +68,7 @@ const BottomTabs = () => {
         }}
       />
       <Tab.Screen
-        name="Review"
+        name="ReviewDummy"
         component={ReviewScreen}
         options={{
           headerShown: false,
@@ -71,13 +81,13 @@ const BottomTabs = () => {
         listeners={({navigation}) => ({
           tabPress: e => {
             e.preventDefault();
-            navigation.navigate('CreateNew');
+            navigation.navigate('Review');
           },
         })}
       />
       <Tab.Screen
-        name="Marketplace"
-        component={MarketplaceScreen}
+        name="MarketplaceStack"
+        component={MarketplaceStack}
         options={{
           headerShown: false,
           tabBarLabel: 'Marketplace',
