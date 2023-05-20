@@ -7,10 +7,17 @@ type CardDetailsProps = {
   name: string;
   price: number;
   currency: string;
+  category: string;
   likeCount: number;
 };
 
-const CardDetails = ({name, price, currency, likeCount}: CardDetailsProps) => {
+const CardDetails = ({
+  name,
+  price,
+  currency,
+  category,
+  likeCount,
+}: CardDetailsProps) => {
   return (
     <View>
       <View style={styles.boxContainer}>
@@ -31,6 +38,15 @@ const CardDetails = ({name, price, currency, likeCount}: CardDetailsProps) => {
       <View style={styles.boxContainer}>
         <Text numberOfLines={1} ellipsizeMode="tail" style={styles.nameText}>
           {name}
+        </Text>
+      </View>
+
+      <View style={styles.boxContainer}>
+        <Text
+          numberOfLines={1}
+          ellipsizeMode="tail"
+          style={styles.categoryText}>
+          {category}
         </Text>
       </View>
     </View>
@@ -55,9 +71,15 @@ const styles = StyleSheet.create({
   },
   nameText: {
     fontSize: 12,
+    fontWeight: 'bold',
+  },
+  categoryText: {
+    fontSize: 12,
+    color: '#999999',
   },
   priceText: {
     fontSize: 12,
     fontWeight: 'bold',
+    color: '#43a2ea',
   },
 });

@@ -42,6 +42,7 @@ const MarketplaceScreen = ({navigation}) => {
               name={item.name}
               price={item.price}
               currency={item.currency}
+              category={item.category}
               likeCount={item.likeCount}
             />
           </View>
@@ -83,7 +84,7 @@ const styles = StyleSheet.create({
   cardsContainer: {
     flex: 0.5, // prevent last column from stretching
     aspectRatio: 1,
-    marginBottom: 64, // add space between cards vertically
+    marginBottom: 80, // add space between cards vertically
     marginHorizontal: 8,
     shadowColor: '#000',
     shadowOpacity: 0.2,
