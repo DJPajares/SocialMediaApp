@@ -1,15 +1,11 @@
 import React from 'react';
 import {Text, SafeAreaView, StyleSheet, View} from 'react-native';
-import ModalHeader from '../components/ModalHeader';
+import Header from '../components/Header';
 
-const UserProfileScreen = ({navigation}) => {
-  const handleBack = () => {
-    navigation.goBack();
-  };
-
+const UserProfileScreen = () => {
   return (
     <SafeAreaView style={styles.flex}>
-      <ModalHeader title="Review" handleBack={handleBack} />
+      <Header />
 
       <View style={styles.container}>
         <Text style={styles.headerText}>User Profile</Text>

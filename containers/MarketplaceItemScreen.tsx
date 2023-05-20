@@ -7,10 +7,10 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import ModalHeader from '../components/ModalHeader';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import {formatCurrency} from '../utils/formatUtils';
 import {SafeAreaView} from 'react-native';
+import Header from '../components/Header';
 
 const MarketplaceItemScreen = ({navigation, route}) => {
   const {
@@ -36,7 +36,7 @@ const MarketplaceItemScreen = ({navigation, route}) => {
 
   return (
     <SafeAreaView style={styles.flex}>
-      <ModalHeader title={name} handleBack={handleBack} />
+      <Header title={name} handleBack={handleBack} />
 
       <ScrollView showsVerticalScrollIndicator={false}>
         <Image style={styles.image} source={{uri: image}} />
