@@ -6,7 +6,6 @@ import {
   TextInput,
   TouchableOpacity,
   FlatList,
-  Text,
 } from 'react-native';
 import Header from '../components/Header';
 import mockData from '../mockData/mockData.json';
@@ -42,6 +41,7 @@ const MarketplaceScreen = ({navigation}) => {
             <CardDetails
               name={item.name}
               price={item.price}
+              currency={item.currency}
               likeCount={item.likeCount}
             />
           </View>
@@ -68,25 +68,22 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   container: {
-    padding: 16,
+    margin: 16,
   },
   searchBarContainer: {
-    // width: '100%',
-    // marginVertical: 16,
+    marginBottom: 16,
   },
   searchBar: {
-    width: '100%',
     borderWidth: 1,
     borderColor: '#ccc',
     borderRadius: 8,
     padding: 16,
     fontSize: 16,
-    marginBottom: 16,
   },
   cardsContainer: {
     flex: 0.5, // prevent last column from stretching
     aspectRatio: 1,
-    marginBottom: 80, // add space between cards vertically
+    marginBottom: 64, // add space between cards vertically
     marginHorizontal: 8,
     shadowColor: '#000',
     shadowOpacity: 0.2,
