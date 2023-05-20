@@ -12,7 +12,9 @@ const Header = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.appNameText}>atrillion</Text>
+      <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+        <Text style={styles.appNameText}>atrillion</Text>
+      </TouchableOpacity>
 
       <View style={styles.iconMenu}>
         <TouchableOpacity
