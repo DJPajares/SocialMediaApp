@@ -51,4 +51,4 @@ Start the server
 
 ## Demo
 
-Insert gif or link to demo
+<video src="https://github.com/DJPajares/SocialMediaApp/assets/91174577/d91819a2-60d6-45e7-ae86-b556a5096a74">
