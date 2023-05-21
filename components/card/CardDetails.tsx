@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import {formatCurrency} from '../utils/formatUtils';
+import {formatCurrency} from '../../utils/formatUtils';
 import {useNavigation} from '@react-navigation/native';
 
 type CardDetailsProps = {

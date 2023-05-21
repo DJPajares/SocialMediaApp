@@ -10,8 +10,8 @@ import {
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import {formatCurrency} from '../utils/formatUtils';
 import {SafeAreaView} from 'react-native';
-import Header from '../components/Header';
-import AvatarWithName from '../components/AvatarWithName';
+import Header from '../components/header/Header';
+import AvatarWithName from '../components/avatar/AvatarWithName';
 
 const MarketplaceItemScreen = ({navigation, route}) => {
   const {

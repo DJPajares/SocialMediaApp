@@ -3,11 +3,11 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import {StyleSheet, TouchableOpacity, View} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import ReviewScreen from '../containers/ReviewScreen';
-import HomeStack from '../stacks/HomeStack';
-import MarketplaceStack from '../stacks/MarketplaceStack';
-import ProfileStack from '../stacks/ProfileStack';
-import ExploreStack from '../stacks/ExploreStack';
+import ReviewScreen from '../../containers/ReviewScreen';
+import HomeStack from '../../stacks/HomeStack';
+import MarketplaceStack from '../../stacks/MarketplaceStack';
+import ProfileStack from '../../stacks/ProfileStack';
+import ExploreStack from '../../stacks/ExploreStack';
 
 const Tab = createBottomTabNavigator();
 

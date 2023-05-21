@@ -2,7 +2,7 @@ import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {Image, StyleSheet, TouchableOpacity, View} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import AvatarWithName from './AvatarWithName';
+import AvatarWithName from '../avatar/AvatarWithName';
 
 type CardProps = {
   item: any;

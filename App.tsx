@@ -1,7 +1,7 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import BottomTabs from './components/BottomTabs';
+import BottomTabs from './components/tab/BottomTabs';
 import ReviewScreen from './containers/ReviewScreen';
 
 const Stack = createNativeStackNavigator();

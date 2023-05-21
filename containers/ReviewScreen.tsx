@@ -1,6 +1,6 @@
 import React from 'react';
 import {Text, SafeAreaView, StyleSheet, View} from 'react-native';
-import ModalHeader from '../components/ModalHeader';
+import ModalHeader from '../components/header/ModalHeader';
 
 const ReviewScreen = ({navigation}) => {
   return (

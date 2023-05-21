@@ -7,10 +7,10 @@ import {
   TouchableOpacity,
   FlatList,
 } from 'react-native';
-import MainHeader from '../components/MainHeader';
+import MainHeader from '../components/header/MainHeader';
 import mockData from '../mockData/mockData.json';
-import Card from '../components/Card';
-import CardDetails from '../components/CardDetails';
+import Card from '../components/card/Card';
+import CardDetails from '../components/card/CardDetails';
 
 const MarketplaceScreen = ({navigation}) => {
   const {items} = mockData;

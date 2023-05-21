@@ -1,7 +1,7 @@
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import React from 'react';
 import {Text, SafeAreaView, StyleSheet, View} from 'react-native';
-import MainHeader from '../components/MainHeader';
+import MainHeader from '../components/header/MainHeader';
 
 type RootStackParamList = {
   Notifications: undefined;

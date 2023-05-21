@@ -8,7 +8,7 @@ import {
   View,
 } from 'react-native';
 import mockData from '../mockData/mockData.json';
-import MainHeader from '../components/MainHeader';
+import MainHeader from '../components/header/MainHeader';
 
 type RootStackParamList = {
   Transaction: {id: string};
