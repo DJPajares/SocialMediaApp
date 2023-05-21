@@ -11,6 +11,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import {formatCurrency} from '../utils/formatUtils';
 import {SafeAreaView} from 'react-native';
 import Header from '../components/Header';
+import AvatarWithName from '../components/AvatarWithName';
 
 const MarketplaceItemScreen = ({navigation, route}) => {
   const {
@@ -69,16 +70,7 @@ const MarketplaceItemScreen = ({navigation, route}) => {
 
           <View style={styles.descriptionContainer}>
             <TouchableOpacity onPress={() => handleNavigateToProfile()}>
-              <View style={styles.userContainer}>
-                <Image style={styles.userImage} source={{uri: userImage}} />
-
-                <Text
-                  numberOfLines={1}
-                  ellipsizeMode="tail"
-                  style={styles.usernameText}>
-                  {username}
-                </Text>
-              </View>
+              <AvatarWithName src={userImage} username={username} />
             </TouchableOpacity>
 
             <Text style={styles.countryText}>{country}</Text>
@@ -147,20 +139,6 @@ const styles = StyleSheet.create({
     // shadowRadius: 4,
     // elevation: 4,
     padding: 16,
-  },
-  userContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  userImage: {
-    width: 30,
-    height: 30,
-    borderRadius: 15,
-    marginRight: 8,
-  },
-  usernameText: {
-    fontSize: 15,
-    fontWeight: 'bold',
   },
   countryText: {
     fontSize: 12,

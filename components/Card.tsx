@@ -1,7 +1,8 @@
 import {useNavigation} from '@react-navigation/native';
 import React from 'react';
-import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {Image, StyleSheet, TouchableOpacity, View} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+import AvatarWithName from './AvatarWithName';
 
 type CardProps = {
   item: any;
@@ -24,27 +25,21 @@ const Card = ({item}: CardProps) => {
   return (
     <View>
       <TouchableOpacity onPress={() => handleOpenItem()}>
-        <Image style={styles.image} source={{uri: item.image}} />
+        <Image style={styles.card} source={{uri: item.image}} />
       </TouchableOpacity>
 
       <LinearGradient
         colors={['transparent', 'rgba(0,0,0,0.7)']}
         style={styles.overlay}>
-        <View style={styles.userContainer}>
+        <View style={styles.labelContainer}>
           <TouchableOpacity onPress={() => handleNavigateToProfile()}>
-            <Image style={styles.userImage} source={{uri: item.userImage}} />
+            <AvatarWithName
+              src={item.userImage}
+              username={item.username}
+              color="#ffffff"
+              size="small"
+            />
           </TouchableOpacity>
-
-          <View style={styles.usernameContainer}>
-            <TouchableOpacity onPress={() => handleNavigateToProfile()}>
-              <Text
-                numberOfLines={1}
-                ellipsizeMode="tail"
-                style={styles.username}>
-                {item.username}
-              </Text>
-            </TouchableOpacity>
-          </View>
         </View>
       </LinearGradient>
     </View>
@@ -54,7 +49,7 @@ const Card = ({item}: CardProps) => {
 export default Card;
 
 const styles = StyleSheet.create({
-  image: {
+  card: {
     aspectRatio: 1,
     // resizeMode: 'contain',
     borderRadius: 8,
@@ -65,28 +60,14 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     bottom: 0,
-    height: '40%',
+    height: '30%',
   },
-  userContainer: {
-    position: 'absolute',
-    right: 0,
-    bottom: 0,
+  labelContainer: {
+    flex: 1,
+    flexGrow: 1,
+    alignItems: 'flex-end',
+    justifyContent: 'flex-end',
     paddingRight: 8,
     paddingBottom: 8,
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  userImage: {
-    width: 20,
-    height: 20,
-    borderRadius: 10,
-    marginRight: 4,
-  },
-  usernameContainer: {
-    maxWidth: '80%', // Adjust the width as needed
-  },
-  username: {
-    fontSize: 12,
-    color: '#fff',
   },
 });
