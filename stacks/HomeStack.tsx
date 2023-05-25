@@ -3,12 +3,19 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import NotificationsScreen from '../containers/NotificationsScreen';
 import TransactionScreen from '../containers/TransactionScreen';
 import HomeScreen from '../containers/HomeScreen';
+import {useColorScheme} from 'nativewind';
 
 const Stack = createNativeStackNavigator();
 
 const HomeStack = () => {
+  const isDarkMode = useColorScheme().colorScheme === 'dark';
+
   return (
-    <Stack.Navigator screenOptions={{headerShown: false}}>
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+        contentStyle: {backgroundColor: isDarkMode ? '#1c1917' : '#f0f0f0'},
+      }}>
       <Stack.Group
         screenOptions={{
           animation: 'fade_from_bottom',

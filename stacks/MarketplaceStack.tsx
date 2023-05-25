@@ -5,12 +5,19 @@ import TransactionScreen from '../containers/TransactionScreen';
 import MarketplaceScreen from '../containers/MarketplaceScreen';
 import MarketplaceItemScreen from '../containers/MarketplaceItemScreen';
 import UserProfileScreen from '../containers/UserProfileScreen';
+import {useColorScheme} from 'nativewind';
 
 const Stack = createNativeStackNavigator();
 
 const MarketplaceStack = () => {
+  const isDarkMode = useColorScheme().colorScheme === 'dark';
+
   return (
-    <Stack.Navigator screenOptions={{headerShown: false}}>
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+        contentStyle: {backgroundColor: isDarkMode ? '#1c1917' : '#f0f0f0'},
+      }}>
       <Stack.Group
         screenOptions={{
           animation: 'fade_from_bottom',
