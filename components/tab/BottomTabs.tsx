@@ -8,6 +8,7 @@ import HomeStack from '../../stacks/HomeStack';
 import MarketplaceStack from '../../stacks/MarketplaceStack';
 import ProfileStack from '../../stacks/ProfileStack';
 import ExploreStack from '../../stacks/ExploreStack';
+import {useColorScheme} from 'nativewind';
 
 const Tab = createBottomTabNavigator();
 
@@ -39,11 +40,16 @@ const TabBarMiddleIcon = ({name, color, size}: TabBarIconProps) => {
 };
 
 const BottomTabs = () => {
+  const {colorScheme} = useColorScheme();
+  const isDarkMode = colorScheme === 'dark';
+
   return (
     <Tab.Navigator
       initialRouteName="Home"
       screenOptions={() => ({
-        tabBarStyle: styles.tabBar,
+        tabBarStyle: styles.tabBar(isDarkMode),
+        tabBarActiveTintColor: isDarkMode ? '#0369a1' : '#0369a1',
+        tabBarInactiveTintColor: isDarkMode ? '#ffffff' : '#000000',
       })}>
       <Tab.Screen
         name="HomeStack"
@@ -51,7 +57,6 @@ const BottomTabs = () => {
         options={{
           headerShown: false,
           tabBarLabel: 'Home',
-          tabBarInactiveTintColor: 'black',
           tabBarIcon: ({color, size}) =>
             TabBarIcon({name: 'home-variant', color, size}),
         }}
@@ -62,7 +67,6 @@ const BottomTabs = () => {
         options={{
           headerShown: false,
           tabBarLabel: 'Explore',
-          tabBarInactiveTintColor: 'black',
           tabBarIcon: ({color, size}) =>
             TabBarIcon({name: 'magnify', color, size}),
         }}
@@ -73,7 +77,6 @@ const BottomTabs = () => {
         options={{
           headerShown: false,
           tabBarLabel: '',
-          tabBarInactiveTintColor: 'black',
           tabBarIcon: ({size}) =>
             TabBarMiddleIcon({name: 'plus-thick', color: 'white', size}),
           tabBarButton: props => <TouchableOpacity {...props} />,
@@ -91,7 +94,6 @@ const BottomTabs = () => {
         options={{
           headerShown: false,
           tabBarLabel: 'Marketplace',
-          tabBarInactiveTintColor: 'black',
           tabBarIcon: ({color, size}) =>
             TabBarIcon({name: 'storefront', color, size}),
         }}
@@ -102,7 +104,6 @@ const BottomTabs = () => {
         options={{
           headerShown: false,
           tabBarLabel: 'Profile',
-          tabBarInactiveTintColor: 'black',
           tabBarIcon: ({color, size}) =>
             TabBarIcon({name: 'account', color, size}),
         }}
@@ -114,15 +115,18 @@ const BottomTabs = () => {
 export default BottomTabs;
 
 const styles = StyleSheet.create({
-  tabBar: {
-    height: 90,
-    paddingTop: 10,
-  },
+  tabBar: (isDarkMode: boolean) => ({
+    // height: 90,
+    // paddingTop: 10,
+    // height: '10%',
+    backgroundColor: isDarkMode ? '#292524' : 'white',
+    borderTopWidth: 0,
+  }),
   middleButton: {
     width: 70,
     height: 70,
     borderRadius: 35,
-    backgroundColor: '#43a2ea',
+    backgroundColor: '#0369a1',
     justifyContent: 'center',
     alignItems: 'center',
     shadowColor: '#000',
