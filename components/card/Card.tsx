@@ -23,7 +23,7 @@ const Card = ({item}: CardProps) => {
   };
 
   return (
-    <View>
+    <View style={styles.container}>
       <TouchableOpacity onPress={() => handleOpenItem()}>
         <Image style={styles.card} source={{uri: item.image}} />
       </TouchableOpacity>
@@ -49,11 +49,18 @@ const Card = ({item}: CardProps) => {
 export default Card;
 
 const styles = StyleSheet.create({
+  container: {
+    shadowColor: '#000',
+    shadowOffset: {width: 0, height: 4},
+    shadowOpacity: 0.5,
+    shadowRadius: 4,
+  },
   card: {
     aspectRatio: 1,
     // resizeMode: 'contain',
     borderRadius: 8,
     backgroundColor: '#fff',
+    // marginBottom: 8,
   },
   overlay: {
     position: 'absolute',
@@ -61,6 +68,7 @@ const styles = StyleSheet.create({
     right: 0,
     bottom: 0,
     height: '30%',
+    borderRadius: 8,
   },
   labelContainer: {
     flex: 1,
