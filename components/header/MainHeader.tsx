@@ -3,6 +3,7 @@ import {useColorScheme} from 'nativewind';
 import React from 'react';
 import {Text, TouchableOpacity, View} from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import colors from 'tailwindcss/colors';
 
 const MainHeader = () => {
   const navigation = useNavigation();
@@ -28,10 +29,12 @@ const MainHeader = () => {
         <TouchableOpacity className="ml-2" onPress={toggleColorScheme}>
           <MaterialCommunityIcons
             name={
-              colorScheme === 'dark' ? 'white-balance-sunny' : 'brightness-2'
+              colorScheme === 'dark'
+                ? 'white-balance-sunny'
+                : 'moon-waning-crescent'
             }
             size={24}
-            color={isDarkMode ? 'white' : 'black'}
+            color={isDarkMode ? colors.stone[50] : colors.stone[950]}
           />
         </TouchableOpacity>
         <TouchableOpacity
@@ -40,14 +43,14 @@ const MainHeader = () => {
           <MaterialCommunityIcons
             name="bell"
             size={24}
-            color={isDarkMode ? 'white' : 'black'}
+            color={isDarkMode ? colors.stone[50] : colors.stone[950]}
           />
         </TouchableOpacity>
         <TouchableOpacity className="ml-2">
           <MaterialCommunityIcons
             name="cog"
             size={24}
-            color={isDarkMode ? 'white' : 'black'}
+            color={isDarkMode ? colors.stone[50] : colors.stone[950]}
           />
         </TouchableOpacity>
       </View>

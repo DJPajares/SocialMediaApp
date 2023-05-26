@@ -1,7 +1,9 @@
 import {useNavigation} from '@react-navigation/native';
+import {useColorScheme} from 'nativewind';
 import React from 'react';
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {Text, TouchableOpacity, View} from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import colors from 'tailwindcss/colors';
 
 type ModalHeaderProps = {
   // title: string;
@@ -11,57 +13,38 @@ type ModalHeaderProps = {
 const Header = ({title}: ModalHeaderProps) => {
   const navigation = useNavigation();
 
+  const isDarkMode = useColorScheme().colorScheme === 'dark';
+
   const handleBack = () => {
     navigation.goBack();
   };
 
   return (
-    <View style={styles.container}>
+    <View className="flex-row justify-between align-middle p-4 border-b border-b-divider dark:border-divider-dark">
       <TouchableOpacity onPress={handleBack}>
-        <MaterialCommunityIcons name="chevron-left" size={24} color="black" />
+        <MaterialCommunityIcons
+          name="chevron-left"
+          size={24}
+          color={isDarkMode ? colors.stone[50] : colors.stone[950]}
+        />
       </TouchableOpacity>
 
-      {/* <View>
-        <Text numberOfLines={1} ellipsizeMode="tail" style={styles.headerText}>
-          {title}
-        </Text>
-      </View> */}
+      {/* <Text
+        numberOfLines={1}
+        ellipsizeMode="tail"
+        className="text-base text-text dark:text-text-dark font-bold uppercase">
+        {title}
+      </Text> */}
 
-      <View style={styles.rightContainer}>
-        {/* <TouchableOpacity onPress={handleBack}>
-          <Text>Cancel</Text>
-        </TouchableOpacity> */}
-        <TouchableOpacity>
-          <MaterialCommunityIcons name="cog" size={24} color="black" />
-        </TouchableOpacity>
-      </View>
+      <TouchableOpacity>
+        <MaterialCommunityIcons
+          name="cog"
+          size={24}
+          color={isDarkMode ? colors.stone[50] : colors.stone[950]}
+        />
+      </TouchableOpacity>
     </View>
   );
 };
 
 export default Header;
-
-const styles = StyleSheet.create({
-  container: {
-    padding: 16,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    borderBottomColor: '#ebe8e8',
-    borderBottomWidth: 1,
-  },
-  middleContainer: {
-    flexDirection: 'row',
-  },
-  rightContainer: {
-    flexDirection: 'row',
-    // flexGrow: 1,
-    // justifyContent: 'flex-end',
-  },
-  headerText: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    textTransform: 'uppercase',
-    // width: '75%',
-  },
-});
