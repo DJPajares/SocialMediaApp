@@ -20,7 +20,7 @@ const Header = ({title}: ModalHeaderProps) => {
   };
 
   return (
-    <View className="flex-row justify-between items-center p-4 border-b border-b-divider dark:border-divider-dark">
+    <View className="flex-row justify-between items-center p-4 border-b border-b-neutral-200 dark:border-b-neutral-800">
       <TouchableOpacity onPress={handleBack}>
         <MaterialCommunityIcons
           name="chevron-left"

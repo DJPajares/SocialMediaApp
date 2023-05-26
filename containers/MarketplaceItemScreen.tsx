@@ -74,7 +74,7 @@ const MarketplaceItemScreen = ({navigation, route}) => {
 
             <Text className="text-sm text-subtext mt-2">{country}</Text>
 
-            <View className="border-t border-t-divider dark:border-t-divider-dark my-4" />
+            <View className="border-t border-t-neutral-200 dark:border-t-neutral-800 my-4" />
             <Text className="text-base pt-2">{description}</Text>
           </View>
         </View>

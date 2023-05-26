@@ -36,8 +36,8 @@ module.exports = {
         },
         subbackground: {
           light: colors.stone[50],
-          DEFAULT: colors.neutral[50],
-          dark: colors.neutral[800],
+          DEFAULT: colors.stone[50],
+          dark: colors.stone[800],
         },
         text: {
           light: colors.neutral[950],
@@ -54,11 +54,11 @@ module.exports = {
           DEFAULT: colors.neutral[700],
           dark: colors.neutral[800],
         },
-        divider: {
-          light: colors.neutral[300],
-          DEFAULT: colors.neutral[300],
-          dark: colors.neutral[600],
-        },
+        // divider: {
+        //   light: colors.neutral[200],
+        //   DEFAULT: colors.neutral[200],
+        //   dark: colors.neutral[800],
+        // },
         icon: {
           light: colors.neutral[950],
           DEFAULT: colors.neutral[950],
