@@ -68,7 +68,8 @@ const styles = StyleSheet.create({
     right: 0,
     bottom: 0,
     height: '30%',
-    borderRadius: 8,
+    borderBottomLeftRadius: 8,
+    borderBottomRightRadius: 8,
   },
   labelContainer: {
     flex: 1,
