@@ -1,16 +1,16 @@
 import React from 'react';
-import {StatusBar, SafeAreaView, View} from 'react-native';
+import {StatusBar} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import BottomTabs from './components/tab/BottomTabs';
 import ReviewScreen from './containers/ReviewScreen';
 import {useColorScheme} from 'nativewind';
+import colors from 'tailwindcss/colors';
 
 const Stack = createNativeStackNavigator();
 
 const App = () => {
   const isDarkMode = useColorScheme().colorScheme === 'dark';
-  // const backgroundStyle = 'bg-neutral-300 dark:bg-slate-100';
 
   return (
     <NavigationContainer>
@@ -19,7 +19,9 @@ const App = () => {
       <Stack.Navigator
         screenOptions={{
           headerShown: false,
-          contentStyle: {backgroundColor: isDarkMode ? '#1c1917' : '#f0f0f0'},
+          contentStyle: {
+            backgroundColor: isDarkMode ? colors.stone[900] : colors.stone[100],
+          },
         }}>
         <Stack.Group>
           <Stack.Screen name="BottomTabs" component={BottomTabs} />

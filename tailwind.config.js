@@ -34,6 +34,11 @@ module.exports = {
           DEFAULT: '#f0f0f0',
           dark: '#1c1917',
         },
+        subbackground: {
+          light: colors.stone[50],
+          DEFAULT: colors.neutral[50],
+          dark: colors.neutral[800],
+        },
         text: {
           light: colors.neutral[950],
           DEFAULT: colors.neutral[950],
@@ -47,12 +52,12 @@ module.exports = {
         border: {
           light: colors.neutral[700],
           DEFAULT: colors.neutral[700],
-          dark: colors.neutral[300],
+          dark: colors.neutral[800],
         },
         divider: {
-          light: colors.neutral[50],
-          DEFAULT: colors.neutral[50],
-          dark: colors.neutral[700],
+          light: colors.neutral[300],
+          DEFAULT: colors.neutral[300],
+          dark: colors.neutral[600],
         },
         icon: {
           light: colors.neutral[950],

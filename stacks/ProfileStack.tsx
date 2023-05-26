@@ -4,6 +4,7 @@ import NotificationsScreen from '../containers/NotificationsScreen';
 import TransactionScreen from '../containers/TransactionScreen';
 import ProfileScreen from '../containers/ProfileScreen';
 import {useColorScheme} from 'nativewind';
+import colors from 'tailwindcss/colors';
 
 const Stack = createNativeStackNavigator();
 
@@ -14,7 +15,9 @@ const ProfileStack = () => {
     <Stack.Navigator
       screenOptions={{
         headerShown: false,
-        contentStyle: {backgroundColor: isDarkMode ? '#1c1917' : '#f0f0f0'},
+        contentStyle: {
+          backgroundColor: isDarkMode ? colors.stone[900] : colors.stone[100],
+        },
       }}>
       <Stack.Group
         screenOptions={{

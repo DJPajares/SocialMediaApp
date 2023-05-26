@@ -6,6 +6,7 @@ import MarketplaceScreen from '../containers/MarketplaceScreen';
 import MarketplaceItemScreen from '../containers/MarketplaceItemScreen';
 import UserProfileScreen from '../containers/UserProfileScreen';
 import {useColorScheme} from 'nativewind';
+import colors from 'tailwindcss/colors';
 
 const Stack = createNativeStackNavigator();
 
@@ -16,7 +17,9 @@ const MarketplaceStack = () => {
     <Stack.Navigator
       screenOptions={{
         headerShown: false,
-        contentStyle: {backgroundColor: isDarkMode ? '#1c1917' : '#f0f0f0'},
+        contentStyle: {
+          backgroundColor: isDarkMode ? colors.stone[900] : colors.stone[100],
+        },
       }}>
       <Stack.Group
         screenOptions={{
