@@ -1,34 +1,19 @@
 import React from 'react';
-import {Text, SafeAreaView, StyleSheet, View} from 'react-native';
+import {Text, SafeAreaView, View} from 'react-native';
 import Header from '../components/header/Header';
 
 const UserProfileScreen = () => {
   return (
-    <SafeAreaView style={styles.flex}>
+    <SafeAreaView className="flex-1">
       <Header />
 
-      <View style={styles.container}>
-        <Text style={styles.headerText}>User Profile</Text>
+      <View className="flex-1 justify-center items-center mx-4">
+        <Text className=" font-semibold text-2xl text-text dark:text-text-dark">
+          User Profile
+        </Text>
       </View>
     </SafeAreaView>
   );
 };
 
 export default UserProfileScreen;
-
-const styles = StyleSheet.create({
-  flex: {
-    flex: 1,
-  },
-  container: {
-    flex: 1,
-    marginHorizontal: 16,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  headerText: {
-    fontSize: 22,
-    fontWeight: '500',
-    marginVertical: 5,
-  },
-});

@@ -9,6 +9,7 @@ import MarketplaceStack from '../../stacks/MarketplaceStack';
 import ProfileStack from '../../stacks/ProfileStack';
 import ExploreStack from '../../stacks/ExploreStack';
 import {useColorScheme} from 'nativewind';
+import colors from 'tailwindcss/colors';
 
 const Tab = createBottomTabNavigator();
 
@@ -48,8 +49,10 @@ const BottomTabs = () => {
       initialRouteName="Home"
       screenOptions={() => ({
         tabBarStyle: styles.tabBar(isDarkMode),
-        tabBarActiveTintColor: isDarkMode ? '#0369a1' : '#0369a1',
-        tabBarInactiveTintColor: isDarkMode ? '#ffffff' : '#000000',
+        tabBarActiveTintColor: '#0369a1',
+        tabBarInactiveTintColor: isDarkMode
+          ? colors.stone[50]
+          : colors.stone[950],
       })}>
       <Tab.Screen
         name="HomeStack"
@@ -119,7 +122,7 @@ const styles = StyleSheet.create({
     // height: 90,
     // paddingTop: 10,
     // height: '10%',
-    backgroundColor: isDarkMode ? '#292524' : 'white',
+    backgroundColor: isDarkMode ? colors.stone[800] : colors.stone[50],
     borderTopWidth: 0,
   }),
   middleButton: {
@@ -129,7 +132,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#0369a1',
     justifyContent: 'center',
     alignItems: 'center',
-    shadowColor: '#000',
+    shadowColor: colors.stone[950],
     shadowOffset: {width: 0, height: 2},
     shadowOpacity: 0.4,
     shadowRadius: 3,
