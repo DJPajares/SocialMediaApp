@@ -1,17 +1,12 @@
 import React from 'react';
-import {
-  Image,
-  ScrollView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import {Image, ScrollView, Text, TouchableOpacity, View} from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import {formatCurrency} from '../utils/formatUtils';
 import {SafeAreaView} from 'react-native';
 import Header from '../components/header/Header';
 import AvatarWithName from '../components/avatar/AvatarWithName';
+import colors from 'tailwindcss/colors';
+import {useColorScheme} from 'nativewind';
 
 const MarketplaceItemScreen = ({navigation, route}) => {
   const {
@@ -27,6 +22,8 @@ const MarketplaceItemScreen = ({navigation, route}) => {
     country,
   } = route.params?.item;
 
+  const isDarkMode = useColorScheme().colorScheme === 'dark';
+
   const handleBack = () => {
     navigation.goBack();
   };
@@ -36,47 +33,49 @@ const MarketplaceItemScreen = ({navigation, route}) => {
   };
 
   return (
-    <SafeAreaView style={styles.flex}>
+    <SafeAreaView>
       <Header title={name} handleBack={handleBack} />
 
       <ScrollView showsVerticalScrollIndicator={false}>
-        <Image style={styles.image} source={{uri: image}} />
+        <Image className="aspect-square" source={{uri: image}} />
 
-        <View style={styles.container}>
-          <View style={styles.headerContainer}>
-            <View style={styles.likeContainer}>
+        <View className="m-4">
+          <View className="flex-row justify-between items-center">
+            <View className="flex-row items-center">
               <MaterialCommunityIcons
                 name="heart-outline"
-                color="black"
+                color={isDarkMode ? colors.stone[50] : colors.stone[950]}
                 size={25}
               />
-              <Text style={styles.likeText}>{likeCount}</Text>
+              <Text className="text-base text-text dark:text-text-dark font-bold ml-1">
+                {likeCount}
+              </Text>
             </View>
 
-            <Text style={styles.priceText}>
+            <Text className="text-lg text-primary font-bold">
               {formatCurrency({value: price, currency})}
             </Text>
           </View>
 
-          <View style={styles.titleContainer}>
+          <View className="mt-2">
             <Text
               numberOfLines={1}
               ellipsizeMode="tail"
-              style={styles.nameText}>
+              className="text-xl text-text dark:text-text-dark font-bold">
               {name}
             </Text>
-            <Text style={styles.categoryText}>{category}</Text>
+            <Text className="text-sm text-subtext mt-1">{category}</Text>
           </View>
 
-          <View style={styles.descriptionContainer}>
+          <View className="bg-subbackground dark:bg-subbackground-dark rounded-lg mt-4 p-4">
             <TouchableOpacity onPress={() => handleNavigateToProfile()}>
               <AvatarWithName src={userImage} username={username} />
             </TouchableOpacity>
 
-            <Text style={styles.countryText}>{country}</Text>
+            <Text className="text-sm text-subtext mt-2">{country}</Text>
 
-            <View style={styles.divider} />
-            <Text style={styles.descriptionText}>{description}</Text>
+            <View className="border-t border-t-divider dark:border-t-divider-dark my-4" />
+            <Text className="text-base pt-2">{description}</Text>
           </View>
         </View>
       </ScrollView>
@@ -85,73 +84,3 @@ const MarketplaceItemScreen = ({navigation, route}) => {
 };
 
 export default MarketplaceItemScreen;
-
-const styles = StyleSheet.create({
-  flex: {
-    flex: 1,
-  },
-  container: {
-    margin: 16,
-  },
-  image: {
-    aspectRatio: 1,
-  },
-  likeContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  likeText: {
-    fontSize: 14,
-    fontWeight: 'bold',
-    marginLeft: 4,
-  },
-  headerContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
-  titleContainer: {
-    marginTop: 16,
-  },
-  nameText: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    // maxWidth: '70%',
-  },
-  categoryText: {
-    fontSize: 14,
-    color: '#999999',
-    marginTop: 4,
-  },
-  priceText: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: '#43a2ea',
-  },
-  descriptionContainer: {
-    marginTop: 16,
-    backgroundColor: '#ffffff', // Set desired background color
-    borderRadius: 8,
-    borderWidth: 1,
-    borderColor: '#dddddd',
-    // shadowColor: '#000000',
-    // shadowOffset: {width: 0, height: 2},
-    // shadowOpacity: 0.4,
-    // shadowRadius: 4,
-    // elevation: 4,
-    padding: 16,
-  },
-  countryText: {
-    fontSize: 12,
-    color: '#999999',
-    marginTop: 8,
-  },
-  divider: {
-    borderBottomColor: '#cdd1ce',
-    borderBottomWidth: 1,
-    marginVertical: 16,
-  },
-  descriptionText: {
-    paddingTop: 8,
-    fontSize: 16,
-  },
-});
