@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+const colors = require('tailwindcss/colors');
 
 module.exports = {
   content: [
@@ -7,30 +8,6 @@ module.exports = {
     './containers/*.{js,jsx,ts,tsx}',
   ],
   theme: {
-    colors: {
-      primary: '#0369a1',
-      secondary: '#c2410c',
-      tangerine: {
-        light: '#ff9e4f',
-        DEFAULT: '#ff7f00',
-        dark: '#c2410c',
-      },
-      background: {
-        light: '#f0f0f0',
-        DEFAULT: '#f0f0f0',
-        dark: '#1c1917',
-      },
-      text: {
-        light: '#0c0a09',
-        DEFAULT: '#0c0a09',
-        dark: '#f0f0f0',
-      },
-      divider: {
-        light: '#e5e5e5',
-        DEFAULT: '#e5e5e5',
-        dark: '#292524',
-      },
-    },
     extend: {
       flexGrow: {
         '1/2': 0.5,
@@ -43,7 +20,41 @@ module.exports = {
       //     'Lato',
       //     ...defaultTheme.fontFamily.sans,
       //   ]
-      // }
+      // },
+      colors: {
+        primary: '#0369a1',
+        secondary: '#c2410c',
+        tangerine: {
+          light: '#ff9e4f',
+          DEFAULT: '#ff7f00',
+          dark: '#c2410c',
+        },
+        background: {
+          light: '#f0f0f0',
+          DEFAULT: '#f0f0f0',
+          dark: '#1c1917',
+        },
+        text: {
+          light: colors.neutral[950],
+          DEFAULT: colors.neutral[950],
+          dark: colors.neutral[50],
+        },
+        border: {
+          light: colors.neutral[700],
+          DEFAULT: colors.neutral[700],
+          dark: colors.neutral[300],
+        },
+        divider: {
+          light: colors.neutral[50],
+          DEFAULT: colors.neutral[50],
+          dark: colors.neutral[700],
+        },
+        icon: {
+          light: colors.neutral[950],
+          DEFAULT: colors.neutral[950],
+          dark: colors.neutral[50],
+        },
+      },
     },
   },
   plugins: [],
