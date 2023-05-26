@@ -75,7 +75,9 @@ const MarketplaceItemScreen = ({navigation, route}) => {
             <Text className="text-sm text-subtext mt-2">{country}</Text>
 
             <View className="border-t border-t-neutral-200 dark:border-t-neutral-800 my-4" />
-            <Text className="text-base pt-2">{description}</Text>
+            <Text className="text-base text-text dark:text-text-dark pt-2">
+              {description}
+            </Text>
           </View>
         </View>
       </ScrollView>
