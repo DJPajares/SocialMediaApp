@@ -39,6 +39,11 @@ module.exports = {
           DEFAULT: colors.neutral[950],
           dark: colors.neutral[50],
         },
+        subtext: {
+          light: colors.neutral[500],
+          DEFAULT: colors.neutral[500],
+          dark: colors.neutral[500],
+        },
         border: {
           light: colors.neutral[700],
           DEFAULT: colors.neutral[700],

@@ -1,8 +1,10 @@
 import React from 'react';
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {Text, TouchableOpacity, View} from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import {formatCurrency} from '../../utils/formatUtils';
 import {useNavigation} from '@react-navigation/native';
+import colors from 'tailwindcss/colors';
+import {useColorScheme} from 'nativewind';
 
 type CardDetailsProps = {
   // navigation: any;
@@ -17,6 +19,7 @@ type CardDetailsProps = {
 
 const CardDetails = ({item}: CardDetailsProps) => {
   const navigation = useNavigation();
+  const isDarkMode = useColorScheme().colorScheme === 'dark';
 
   const handleOpenItem = () => {
     navigation.navigate('MarketPlaceItem', {item});
@@ -24,34 +27,39 @@ const CardDetails = ({item}: CardDetailsProps) => {
 
   return (
     <View>
-      <View style={styles.boxContainer}>
-        <View style={styles.likeContainer}>
+      <View className="flex-row justify-between items-center mt-1">
+        <View className="flex-row items-center">
           <MaterialCommunityIcons
             name="heart-outline"
-            color="black"
+            color={isDarkMode ? colors.stone[50] : colors.stone[950]}
             size={20}
           />
-          <Text style={styles.likeText}>{item.likeCount}</Text>
+          <Text className="text-xs text-text dark:text-text-dark font-bold ml-1">
+            {item.likeCount}
+          </Text>
         </View>
 
-        <Text style={styles.priceText}>
+        <Text className="text-xs text-primary font-bold">
           {formatCurrency({value: item.price, currency: item.currency})}
         </Text>
       </View>
 
-      <View style={styles.boxContainer}>
+      <View className="flex-row justify-between mt-1">
         <TouchableOpacity onPress={() => handleOpenItem()}>
-          <Text numberOfLines={1} ellipsizeMode="tail" style={styles.nameText}>
+          <Text
+            numberOfLines={1}
+            ellipsizeMode="tail"
+            className="text-xs text-text dark:text-text-dark font-bold">
             {item.name}
           </Text>
         </TouchableOpacity>
       </View>
 
-      <View style={styles.boxContainer}>
+      <View className="flex-row justify-between mt-1">
         <Text
           numberOfLines={1}
           ellipsizeMode="tail"
-          style={styles.categoryText}>
+          className="text-xs text-subtext">
           {item.category}
         </Text>
       </View>
@@ -60,32 +68,3 @@ const CardDetails = ({item}: CardDetailsProps) => {
 };
 
 export default CardDetails;
-
-const styles = StyleSheet.create({
-  boxContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginTop: 4,
-  },
-  likeContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  likeText: {
-    fontSize: 12,
-    marginLeft: 4,
-  },
-  nameText: {
-    fontSize: 12,
-    fontWeight: 'bold',
-  },
-  categoryText: {
-    fontSize: 12,
-    color: '#999999',
-  },
-  priceText: {
-    fontSize: 12,
-    fontWeight: 'bold',
-    color: '#43a2ea',
-  },
-});
