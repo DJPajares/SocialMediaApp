@@ -3,14 +3,14 @@ import {StyleSheet, Text, View} from 'react-native';
 import Avatar from './Avatar';
 
 type AvatarWithNameProps = {
-  src: string;
+  url: string;
   username: string;
   color?: string;
   size?: 'small' | 'normal' | 'large';
 };
 
 const AvatarWithName = ({
-  src,
+  url,
   username,
   color = '#000000',
   size = 'normal',
@@ -23,7 +23,7 @@ const AvatarWithName = ({
 
   return (
     <View style={styles.container}>
-      <Avatar src={src} width={width} />
+      <Avatar url={url} width={width} />
       <Text
         numberOfLines={1}
         ellipsizeMode="tail"

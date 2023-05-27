@@ -1,8 +1,8 @@
 import {useNavigation} from '@react-navigation/native';
 import React from 'react';
-import {Image, StyleSheet, TouchableOpacity, View} from 'react-native';
+import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import AvatarWithName from '../avatar/AvatarWithName';
+import Avatar from '../avatar/Avatar';
 
 type CardProps = {
   item: any;
@@ -33,12 +33,15 @@ const Card = ({item}: CardProps) => {
         style={styles.overlay}>
         <View style={styles.labelContainer}>
           <TouchableOpacity onPress={() => handleNavigateToProfile()}>
-            <AvatarWithName
-              src={item.userImage}
-              username={item.username}
-              color="#ffffff"
-              size="small"
-            />
+            <View className="flex-row items-center">
+              <Avatar url={item.userImage} width={20} />
+              <Text
+                numberOfLines={1}
+                ellipsizeMode="tail"
+                className="text-xs text-text-dark max-w-[80%] pl-2">
+                {item.username}
+              </Text>
+            </View>
           </TouchableOpacity>
         </View>
       </LinearGradient>

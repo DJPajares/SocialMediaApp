@@ -41,8 +41,8 @@ const MarketplaceScreen = ({navigation}) => {
           ListHeaderComponent={
             <View className="mb-4">
               <TextInput
-                className="border border-border dark:border-border-dark rounded-lg p-2 text-base text-text dark:text-text-dark"
-                placeholder="Search..."
+                className="border border-stone-300 dark:border-stone-800 rounded-lg p-3 text-text dark:text-text-dark"
+                placeholder="Search"
               />
             </View>
           }

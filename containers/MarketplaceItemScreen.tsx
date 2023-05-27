@@ -4,10 +4,10 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import {formatCurrency} from '../utils/formatUtils';
 // import {SafeAreaView} from 'react-native';
 import Header from '../components/header/Header';
-import AvatarWithName from '../components/avatar/AvatarWithName';
 import colors from 'tailwindcss/colors';
 import {useColorScheme} from 'nativewind';
 import {SafeAreaView} from 'react-native-safe-area-context';
+import Avatar from '../components/avatar/Avatar';
 
 const MarketplaceItemScreen = ({navigation, route}) => {
   const {
@@ -70,7 +70,15 @@ const MarketplaceItemScreen = ({navigation, route}) => {
 
           <View className="bg-subbackground dark:bg-subbackground-dark rounded-lg mt-4 p-4">
             <TouchableOpacity onPress={() => handleNavigateToProfile()}>
-              <AvatarWithName src={userImage} username={username} />
+              <View className="flex-row items-center">
+                <Avatar url={userImage} width={30} />
+                <Text
+                  numberOfLines={1}
+                  ellipsizeMode="tail"
+                  className="text-sm text-text dark:text-text-dark font-bold max-w-[80%] pl-2">
+                  {username}
+                </Text>
+              </View>
             </TouchableOpacity>
 
             <Text className="text-sm text-subtext mt-2">{country}</Text>
