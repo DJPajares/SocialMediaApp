@@ -14,7 +14,7 @@ const ModalHeader = ({title}: ModalHeaderProps) => {
   };
 
   return (
-    <View className="flex-row justify-between items-center p-4 border-b border-b-neutral-200 dark:border-b-neutral-800">
+    <View className="flex-row justify-between items-center p-4 border-b border-b-stone-300 dark:border-b-stone-800">
       <View className="flex-row grow justify-end">
         <TouchableOpacity onPress={handleBack}>
           <Text className="text-text dark:text-text-dark">Cancel</Text>

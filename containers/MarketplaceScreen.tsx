@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  SafeAreaView,
+  // SafeAreaView,
   View,
   TextInput,
   TouchableOpacity,
@@ -10,6 +10,7 @@ import MainHeader from '../components/header/MainHeader';
 import mockData from '../mockData/mockData.json';
 import Card from '../components/card/Card';
 import CardDetails from '../components/card/CardDetails';
+import {SafeAreaView} from 'react-native-safe-area-context';
 
 const MarketplaceScreen = ({navigation}) => {
   const {items} = mockData;
@@ -19,7 +20,7 @@ const MarketplaceScreen = ({navigation}) => {
   };
 
   return (
-    <SafeAreaView className="flex-1">
+    <SafeAreaView>
       <MainHeader />
 
       <View className="m-4">

@@ -20,7 +20,7 @@ const MainHeader = () => {
   };
 
   return (
-    <View className="flex-row justify-between items-center p-4 border-b border-b-neutral-200 dark:border-b-neutral-800">
+    <View className="flex-row justify-between items-center p-4 border-b border-b-stone-300 dark:border-b-stone-800">
       <TouchableOpacity onPress={handleNavigateToHome}>
         <Text className="text-lg font-bold text-primary">atrillion</Text>
       </TouchableOpacity>

@@ -122,6 +122,7 @@ const styles = StyleSheet.create({
     // height: 90,
     // paddingTop: 10,
     // height: '10%',
+    position: 'static',
     backgroundColor: isDarkMode ? colors.stone[800] : colors.stone[50],
     borderTopWidth: 0,
   }),

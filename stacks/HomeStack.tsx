@@ -16,7 +16,7 @@ const HomeStack = () => {
       screenOptions={{
         headerShown: false,
         contentStyle: {
-          backgroundColor: isDarkMode ? colors.stone[900] : colors.stone[100],
+          backgroundColor: isDarkMode ? colors.stone[900] : colors.stone[200],
         },
       }}>
       <Stack.Group

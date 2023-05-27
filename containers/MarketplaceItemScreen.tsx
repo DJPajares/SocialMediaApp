@@ -2,11 +2,12 @@ import React from 'react';
 import {Image, ScrollView, Text, TouchableOpacity, View} from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import {formatCurrency} from '../utils/formatUtils';
-import {SafeAreaView} from 'react-native';
+// import {SafeAreaView} from 'react-native';
 import Header from '../components/header/Header';
 import AvatarWithName from '../components/avatar/AvatarWithName';
 import colors from 'tailwindcss/colors';
 import {useColorScheme} from 'nativewind';
+import {SafeAreaView} from 'react-native-safe-area-context';
 
 const MarketplaceItemScreen = ({navigation, route}) => {
   const {
@@ -74,7 +75,7 @@ const MarketplaceItemScreen = ({navigation, route}) => {
 
             <Text className="text-sm text-subtext mt-2">{country}</Text>
 
-            <View className="border-t border-t-neutral-200 dark:border-t-neutral-800 my-4" />
+            <View className="border-t border-t-stone-200 dark:border-t-stone-700 my-4" />
             <Text className="text-base text-text dark:text-text-dark pt-2">
               {description}
             </Text>
