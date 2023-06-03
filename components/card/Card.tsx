@@ -23,15 +23,20 @@ const Card = ({item}: CardProps) => {
   };
 
   return (
-    <View style={styles.container}>
-      <TouchableOpacity onPress={() => handleOpenItem()}>
-        <Image style={styles.card} source={{uri: item.image}} />
-      </TouchableOpacity>
+    <View>
+      <View style={styles.container}>
+        <TouchableOpacity onPress={() => handleOpenItem()}>
+          <Image
+            className="aspect-square rounded-lg"
+            source={{uri: item.image}}
+          />
+        </TouchableOpacity>
+      </View>
 
       <LinearGradient
         colors={['transparent', 'rgba(0,0,0,0.7)']}
-        style={styles.overlay}>
-        <View style={styles.labelContainer}>
+        className="absolute left-0 right-0 bottom-0 h-[30%] rounded-bl-lg rounded-br-lg">
+        <View className="flex-1 grow items-end justify-end pr-2 pb-2">
           <TouchableOpacity onPress={() => handleNavigateToProfile()}>
             <View className="flex-row items-center">
               <Avatar url={item.userImage} width={20} />
@@ -52,34 +57,11 @@ const Card = ({item}: CardProps) => {
 export default Card;
 
 const styles = StyleSheet.create({
+  // keep this style for shadow
   container: {
     shadowColor: '#000',
     shadowOffset: {width: 0, height: 4},
     shadowOpacity: 0.5,
     shadowRadius: 4,
-  },
-  card: {
-    aspectRatio: 1,
-    // resizeMode: 'contain',
-    borderRadius: 8,
-    backgroundColor: '#fff',
-    // marginBottom: 8,
-  },
-  overlay: {
-    position: 'absolute',
-    left: 0,
-    right: 0,
-    bottom: 0,
-    height: '30%',
-    borderBottomLeftRadius: 8,
-    borderBottomRightRadius: 8,
-  },
-  labelContainer: {
-    flex: 1,
-    flexGrow: 1,
-    alignItems: 'flex-end',
-    justifyContent: 'flex-end',
-    paddingRight: 8,
-    paddingBottom: 8,
   },
 });

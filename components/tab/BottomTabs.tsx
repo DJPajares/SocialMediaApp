@@ -46,13 +46,15 @@ const BottomTabs = () => {
 
   return (
     <Tab.Navigator
-      initialRouteName="Home"
       screenOptions={() => ({
         tabBarStyle: styles.tabBar(isDarkMode),
         tabBarActiveTintColor: '#0369a1',
         tabBarInactiveTintColor: isDarkMode
           ? colors.stone[50]
           : colors.stone[950],
+        tabBarItemStyle: {
+          padding: 4,
+        },
       })}>
       <Tab.Screen
         name="HomeStack"
@@ -118,6 +120,7 @@ const BottomTabs = () => {
 export default BottomTabs;
 
 const styles = StyleSheet.create({
+  // keep this style
   tabBar: (isDarkMode: boolean) => ({
     // height: 90,
     // paddingTop: 10,
