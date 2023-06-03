@@ -13,6 +13,7 @@ const ProfileStack = () => {
 
   return (
     <Stack.Navigator
+      initialRouteName="Profile"
       screenOptions={{
         headerShown: false,
         contentStyle: {

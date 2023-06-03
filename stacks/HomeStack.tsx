@@ -13,6 +13,7 @@ const HomeStack = () => {
 
   return (
     <Stack.Navigator
+      initialRouteName="Home"
       screenOptions={{
         headerShown: false,
         contentStyle: {

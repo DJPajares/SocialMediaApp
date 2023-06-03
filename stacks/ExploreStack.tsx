@@ -13,6 +13,7 @@ const ExploreStack = () => {
 
   return (
     <Stack.Navigator
+      initialRouteName="Explore"
       screenOptions={{
         headerShown: false,
         contentStyle: {

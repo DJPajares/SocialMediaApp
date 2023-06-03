@@ -15,6 +15,7 @@ const MarketplaceStack = () => {
 
   return (
     <Stack.Navigator
+      initialRouteName="Marketplace"
       screenOptions={{
         headerShown: false,
         contentStyle: {
