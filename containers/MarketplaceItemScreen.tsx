@@ -34,7 +34,7 @@ const MarketplaceItemScreen = ({navigation, route}) => {
   };
 
   return (
-    <SafeAreaView>
+    <SafeAreaView className="flex-1" edges={['top']}>
       <Header title={name} handleBack={handleBack} />
 
       <ScrollView showsVerticalScrollIndicator={false}>

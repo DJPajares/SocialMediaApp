@@ -20,7 +20,7 @@ const MarketplaceScreen = ({navigation}) => {
   };
 
   return (
-    <SafeAreaView>
+    <SafeAreaView className="flex-1">
       <MainHeader />
 
       <View className="m-4">
