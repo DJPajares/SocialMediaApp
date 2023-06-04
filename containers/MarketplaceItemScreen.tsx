@@ -15,8 +15,7 @@ const MarketplaceItemScreen = ({navigation, route}) => {
     name,
     price,
     currency,
-    username,
-    userImage,
+    user,
     description,
     likeCount,
     category,
@@ -30,7 +29,7 @@ const MarketplaceItemScreen = ({navigation, route}) => {
   };
 
   const handleNavigateToProfile = () => {
-    navigation.navigate('UserProfile');
+    navigation.navigate('UserProfile', {user});
   };
 
   return (
@@ -71,12 +70,12 @@ const MarketplaceItemScreen = ({navigation, route}) => {
           <View className="bg-subbackground dark:bg-subbackground-dark rounded-lg mt-4 p-4">
             <TouchableOpacity onPress={() => handleNavigateToProfile()}>
               <View className="flex-row items-center">
-                <Avatar url={userImage} width={30} />
+                <Avatar url={user.image} width={30} />
                 <Text
                   numberOfLines={1}
                   ellipsizeMode="tail"
                   className="text-sm text-text dark:text-text-dark font-bold max-w-[80%] pl-2">
-                  {username}
+                  {user.name}
                 </Text>
               </View>
             </TouchableOpacity>

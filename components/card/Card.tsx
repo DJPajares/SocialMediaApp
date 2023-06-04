@@ -19,7 +19,9 @@ const Card = ({item}: CardProps) => {
   };
 
   const handleNavigateToProfile = () => {
-    navigation.navigate('UserProfile');
+    navigation.navigate('UserProfile', {
+      user: item.user,
+    });
   };
 
   return (
@@ -39,12 +41,12 @@ const Card = ({item}: CardProps) => {
         <View className="flex-1 grow items-end justify-end pr-2 pb-2">
           <TouchableOpacity onPress={() => handleNavigateToProfile()}>
             <View className="flex-row items-center">
-              <Avatar url={item.userImage} width={20} />
+              <Avatar url={item.user.image} width={20} />
               <Text
                 numberOfLines={1}
                 ellipsizeMode="tail"
                 className="text-xs text-text-dark max-w-[80%] pl-2">
-                {item.username}
+                {item.user.name}
               </Text>
             </View>
           </TouchableOpacity>
