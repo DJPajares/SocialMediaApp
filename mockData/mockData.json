@@ -12,8 +12,13 @@
       "currency": "USD",
       "description": "Used only a few times. Still in good condition. Will be buying a Spalding instead.",
       "image": "https://media.newitts.com/cdn/images/products/new-design/800x800/it013766d.jpg",
-      "username": "John Doe",
-      "userImage": "https://images.pexels.com/photos/1933873/pexels-photo-1933873.jpeg",
+      "user": {
+        "id": "user1",
+        "name": "John Doe",
+        "image": "https://images.pexels.com/photos/1933873/pexels-photo-1933873.jpeg",
+        "followers": 2402,
+        "following": 120
+      },
       "likeCount": 10,
       "category": "Sports",
       "country": "Philippines"
@@ -25,8 +30,13 @@
       "currency": "USD",
       "description": "Bought during his concert in Singapore. Worn only once.",
       "image": "https://cdn.shopify.com/s/files/1/0497/6128/8349/files/20230509_182344220_iOS_2000x.heic",
-      "username": "Jane Smith",
-      "userImage": "https://images.pexels.com/photos/6608313/pexels-photo-6608313.jpeg",
+      "user": {
+        "id": "user2",
+        "name": "Jane Smith",
+        "image": "https://images.pexels.com/photos/6608313/pexels-photo-6608313.jpeg",
+        "followers": 300,
+        "following": 5
+      },
       "likeCount": 5,
       "category": "Fashion",
       "country": "U.S."
@@ -38,8 +48,13 @@
       "currency": "USD",
       "description": "Used Fantastic Four comics. Still in good condition. Willing to trade with other Marvel comics.",
       "image": "https://images.radio.com/aiu-media/Marvel-0c4666a8-4486-4aca-9daa-a8a78cee911d.jpg",
-      "username": "David Lee",
-      "userImage": "https://images.pexels.com/photos/4412516/pexels-photo-4412516.jpeg",
+      "user": {
+        "id": "user3",
+        "name": "David Lee",
+        "image": "https://images.pexels.com/photos/4412516/pexels-photo-4412516.jpeg",
+        "followers": 5,
+        "following": 93
+      },
       "likeCount": 2,
       "category": "Books",
       "country": "Netherlands"
@@ -51,8 +66,13 @@
       "currency": "USD",
       "description": "Brand new Steam Deck. 64GB. Willing to trade with PS5.",
       "image": "https://i.pcmag.com/imagery/reviews/02en94vZRDlIFeB9IKuQAlI-20.fit_scale.size_760x427.v1646419997.jpg",
-      "username": "Emily Swantonbombermaneater",
-      "userImage": "https://images.pexels.com/photos/5119214/pexels-photo-5119214.jpeg",
+      "user": {
+        "id": "user4",
+        "name": "Emily Swanton",
+        "image": "https://images.pexels.com/photos/5119214/pexels-photo-5119214.jpeg",
+        "followers": 100,
+        "following": 10
+      },
       "likeCount": 35,
       "category": "Electronics",
       "country": "Singapore"
@@ -64,8 +84,13 @@
       "currency": "USD",
       "description": "Beyond rare, this is the only known surviving Macintosh prototype with a Twiggy disk drive.",
       "image": "https://i.dailymail.co.uk/i/pix/2012/04/13/article-2129162-1293AA59000005DC-331_634x509.jpg",
-      "username": "Michael Kim",
-      "userImage": "https://images.pexels.com/photos/8114406/pexels-photo-8114406.jpeg",
+      "user": {
+        "id": "user5",
+        "name": "Michael Kim",
+        "image": "https://images.pexels.com/photos/8114406/pexels-photo-8114406.jpeg",
+        "followers": 1000,
+        "following": 100
+      },
       "likeCount": 368,
       "category": "Electronics",
       "country": "U.S."
@@ -77,8 +102,13 @@
       "currency": "USD",
       "description": "2 pots of terrarium plants. Took me 2 years to grow them. Need a new home.",
       "image": "https://epicworkshops.b-cdn.net/wp-content/uploads/2021/03/IMG_2713-570x667-1.jpg",
-      "username": "Sarah Tan",
-      "userImage": "https://images.pexels.com/photos/2709388/pexels-photo-2709388.jpeg",
+      "user": {
+        "id": "user6",
+        "name": "Sarah Tan",
+        "image": "https://images.pexels.com/photos/2709388/pexels-photo-2709388.jpeg",
+        "followers": 11,
+        "following": 1024
+      },
       "likeCount": 88,
       "category": "Home Living",
       "country": "Dubai"
@@ -90,8 +120,13 @@
       "currency": "USD",
       "description": "2 VIP tickets to the Beyonce and Jay-Z concert. Selling at a loss.",
       "image": "https://soundigest.com/wp-content/uploads/2016/08/10313172_10152524777209002_6783548136581784305_n.jpg",
-      "username": "Megan Wolf",
-      "userImage": "https://images.pexels.com/photos/2530775/pexels-photo-2530775.jpeg",
+      "user": {
+        "id": "user7",
+        "name": "Megan Wolf",
+        "image": "https://images.pexels.com/photos/2530775/pexels-photo-2530775.jpeg",
+        "followers": 99,
+        "following": 99
+      },
       "likeCount": 12,
       "category": "Tickets",
       "country": "Canada"
@@ -103,8 +138,13 @@
       "currency": "USD",
       "description": "A child mouth guard. Used only once.",
       "image": "https://www.dentallaboratorio.com/wp-content/uploads/2021/06/child-mouth-guard-for-sale.jpg",
-      "username": "Alice N. Blunderland",
-      "userImage": "https://images.pexels.com/photos/4156467/pexels-photo-4156467.jpeg",
+      "user": {
+        "id": "user8",
+        "name": "Alice N. Blunderland",
+        "image": "https://images.pexels.com/photos/4156467/pexels-photo-4156467.jpeg",
+        "followers": 0,
+        "following": 0
+      },
       "likeCount": 0,
       "category": "Home Living",
       "country": "China"
@@ -116,8 +156,13 @@
       "currency": "USD",
       "description": "Brand new Apple HomePod Mini. Selling because I already have one.",
       "image": "https://i.rtings.com/assets/products/Raq5Ijzg/apple-homepod-mini/design-medium.jpg",
-      "username": "Peter Barker",
-      "userImage": "https://images.pexels.com/photos/7745573/pexels-photo-7745573.jpeg",
+      "user": {
+        "id": "user9",
+        "name": "Peter Barker",
+        "image": "https://images.pexels.com/photos/7745573/pexels-photo-7745573.jpeg",
+        "followers": 59,
+        "following": 12
+      },
       "likeCount": 1,
       "category": "Electronics",
       "country": "Singapore"
