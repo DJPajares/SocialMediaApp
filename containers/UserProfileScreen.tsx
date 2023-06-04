@@ -1,17 +1,17 @@
 import React from 'react';
-import {Text, SafeAreaView, View} from 'react-native';
+import {View} from 'react-native';
 import Header from '../components/header/Header';
+import {SafeAreaView} from 'react-native-safe-area-context';
+import ProfileInfo from '../components/profile/ProfileInfo';
 
-const UserProfileScreen = () => {
+const UserProfileScreen = ({navigation, route}) => {
+  const {user} = route.params;
+
   return (
     <SafeAreaView className="flex-1">
       <Header />
 
-      <View className="flex-1 justify-center items-center mx-4">
-        <Text className=" font-semibold text-2xl text-text dark:text-text-dark">
-          User Profile
-        </Text>
-      </View>
+      <ProfileInfo user={user} />
     </SafeAreaView>
   );
 };
